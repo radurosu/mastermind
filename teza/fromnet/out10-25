@@ -1,0 +1,405 @@
+Colors:    2 
+Positions: 1
+Runs:      1000
+
+Average: 1.495
+Std.Dev: 0.015818508944436743
+Maximum: 2
+It took us: 0:1. 
+-------
+Colors:    2 
+Positions: 2
+Runs:      1000
+
+Average: 1.994
+Std.Dev: 0.022010189650442553
+Maximum: 3
+It took us: 0:1. 
+-------
+Colors:    2 
+Positions: 3
+Runs:      1000
+
+Average: 2.414
+Std.Dev: 0.026024628360099233
+Maximum: 4
+It took us: 0:1. 
+-------
+Colors:    2 
+Positions: 4
+Runs:      1000
+
+Average: 2.868
+Std.Dev: 0.031040933290407677
+Maximum: 5
+It took us: 0:1. 
+-------
+Colors:    2 
+Positions: 5
+Runs:      1000
+
+Average: 3.245
+Std.Dev: 0.03403135514688084
+Maximum: 6
+It took us: 0:1. 
+-------
+Colors:    2 
+Positions: 6
+Runs:      1000
+
+Average: 3.7030000000000003
+Std.Dev: 0.037871166145568125
+Maximum: 7
+It took us: 0:1. 
+-------
+Colors:    2 
+Positions: 7
+Runs:      1000
+
+Average: 4.151
+Std.Dev: 0.04110825815926636
+Maximum: 8
+It took us: 0:2. 
+-------
+Colors:    2 
+Positions: 8
+Runs:      1000
+
+Average: 4.662
+Std.Dev: 0.042065728634192535
+Maximum: 8
+It took us: 0:7. 
+-------
+Colors:    2 
+Positions: 9
+Runs:      1000
+
+Average: 5.109
+Std.Dev: 0.043022900529485104
+Maximum: 9
+It took us: 0:8. 
+-------
+Colors:    3 
+Positions: 1
+Runs:      1000
+
+Average: 2.015
+Std.Dev: 0.02540512586901353
+Maximum: 3
+It took us: 0:0. 
+-------
+Colors:    3 
+Positions: 2
+Runs:      1000
+
+Average: 2.447
+Std.Dev: 0.023531781588837355
+Maximum: 4
+It took us: 0:0. 
+-------
+Colors:    3 
+Positions: 3
+Runs:      1000
+
+Average: 2.871
+Std.Dev: 0.022690832375077692
+Maximum: 5
+It took us: 0:1. 
+-------
+Colors:    3 
+Positions: 4
+Runs:      1000
+
+Average: 3.226
+Std.Dev: 0.02309669797736156
+Maximum: 6
+It took us: 0:1. 
+-------
+Colors:    3 
+Positions: 5
+Runs:      1000
+
+Average: 3.5740000000000003
+Std.Dev: 0.024599372535272702
+Maximum: 6
+It took us: 0:1. 
+-------
+Colors:    3 
+Positions: 6
+Runs:      1000
+
+Average: 3.948
+Std.Dev: 0.026608344631036406
+Maximum: 7
+It took us: 0:2. 
+-------
+Colors:    3 
+Positions: 7
+Runs:      1000
+
+Average: 4.328
+Std.Dev: 0.02869214595040321
+Maximum: 7
+It took us: 0:6. 
+-------
+Colors:    3 
+Positions: 8
+Runs:      1000
+
+Average: 4.74
+Std.Dev: 0.029921485512843366
+Maximum: 8
+It took us: 0:29. 
+-------
+Colors:    3 
+Positions: 9
+Runs:      1000
+
+Average: 5.1610000000000005
+Std.Dev: 0.02983234769455748
+Maximum: 9
+It took us: 1:7. 
+-------
+Colors:    4 
+Positions: 1
+Runs:      1000
+
+Average: 2.495
+Std.Dev: 0.03531603350069515
+Maximum: 4
+It took us: 0:4. 
+-------
+Colors:    4 
+Positions: 2
+Runs:      1000
+
+Average: 2.9330000000000003
+Std.Dev: 0.029178114441518705
+Maximum: 5
+It took us: 0:3. 
+-------
+Colors:    4 
+Positions: 3
+Runs:      1000
+
+Average: 3.3810000000000002
+Std.Dev: 0.025426078846048708
+Maximum: 5
+It took us: 0:5. 
+-------
+Colors:    4 
+Positions: 4
+Runs:      1000
+
+Average: 3.771
+Std.Dev: 0.024963617169436448
+Maximum: 7
+It took us: 0:5. 
+-------
+Colors:    4 
+Positions: 5
+Runs:      1000
+
+Average: 4.1290000000000004
+Std.Dev: 0.024919469897651914
+Maximum: 7
+It took us: 0:9. 
+-------
+Colors:    4 
+Positions: 6
+Runs:      1000
+
+Average: 4.55
+Std.Dev: 0.026612181575515533
+Maximum: 7
+It took us: 0:17. 
+-------
+Colors:    4 
+Positions: 7
+Runs:      1000
+
+Average: 4.961
+Std.Dev: 0.029194714099153828
+Maximum: 9
+It took us: 0:41. 
+-------
+Colors:    4 
+Positions: 8
+Runs:      1000
+
+Average: 5.466
+Std.Dev: 0.029861944607405187
+Maximum: 9
+It took us: 1:49. 
+-------
+Colors:    4 
+Positions: 9
+Runs:      1000
+
+Average: 5.945
+Std.Dev: 0.030804608809785652
+Maximum: 9
+It took us: 5:1. 
+-------
+Colors:    5 
+Positions: 1
+Runs:      1000
+
+Average: 2.935
+Std.Dev: 0.043894210343753785
+Maximum: 5
+It took us: 0:4. 
+-------
+Colors:    5 
+Positions: 2
+Runs:      1000
+
+Average: 3.326
+Std.Dev: 0.03511348682425254
+Maximum: 6
+It took us: 0:4. 
+-------
+Colors:    5 
+Positions: 3
+Runs:      1000
+
+Average: 3.759
+Std.Dev: 0.027923085407932605
+Maximum: 6
+It took us: 0:5. 
+-------
+Colors:    5 
+Positions: 4
+Runs:      1000
+
+Average: 4.186
+Std.Dev: 0.02619332147876802
+Maximum: 7
+It took us: 0:6. 
+-------
+Colors:    5 
+Positions: 5
+Runs:      1000
+
+Average: 4.589
+Std.Dev: 0.025587765313401907
+Maximum: 7
+It took us: 0:13. 
+-------
+Colors:    5 
+Positions: 6
+Runs:      1000
+
+Average: 5.075
+Std.Dev: 0.026834587663966354
+Maximum: 8
+It took us: 0:33. 
+-------
+Colors:    5 
+Positions: 7
+Runs:      1000
+
+Average: 5.577
+Std.Dev: 0.02978183939849851
+Maximum: 8
+It took us: 1:38. 
+-------
+Colors:    5 
+Positions: 8
+Runs:      1000
+
+Average: 6.038
+Std.Dev: 0.02992409483094604
+Maximum: 9
+It took us: 4:55. 
+-------
+Colors:    5 
+Positions: 9
+Runs:      1000
+
+Average: 6.549
+Std.Dev: 0.03247543153914438
+Maximum: 9
+It took us: 15:30. 
+-------
+Colors:    6 
+Positions: 1
+Runs:      1000
+
+Average: 3.505
+Std.Dev: 0.054432875525163446
+Maximum: 6
+It took us: 0:4. 
+-------
+Colors:    6 
+Positions: 2
+Runs:      1000
+
+Average: 3.866
+Std.Dev: 0.038930188280556256
+Maximum: 7
+It took us: 0:4. 
+-------
+Colors:    6 
+Positions: 3
+Runs:      1000
+
+Average: 4.285
+Std.Dev: 0.03034296781291665
+Maximum: 7
+It took us: 0:5. 
+-------
+Colors:    6 
+Positions: 4
+Runs:      1000
+
+Average: 4.657
+Std.Dev: 0.028638630748888314
+Maximum: 8
+It took us: 0:10. 
+-------
+Colors:    6 
+Positions: 5
+Runs:      1000
+
+Average: 5.113
+Std.Dev: 0.02758608330285385
+Maximum: 7
+It took us: 0:21. 
+-------
+Colors:    6 
+Positions: 6
+Runs:      1000
+
+Average: 5.573
+Std.Dev: 0.028591755603468782
+Maximum: 9
+It took us: 1:9. 
+-------
+Colors:    6 
+Positions: 7
+Runs:      1000
+
+Average: 6.089
+Std.Dev: 0.029562695292428144
+Maximum: 10
+It took us: 3:39. 
+-------
+Colors:    6 
+Positions: 8
+Runs:      1000
+
+Average: 6.682
+Std.Dev: 0.031684063500123844
+Maximum: 10
+It took us: 13:8. 
+-------
+Colors:    6 
+Positions: 9
+Runs:      1000
+
+Average: 7.199
+Std.Dev: 0.03383110319725834
+Maximum: 10
+It took us: 42:7. 
+-------

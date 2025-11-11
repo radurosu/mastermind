@@ -1,0 +1,399 @@
+Colors:    2 
+Positions: 1
+Runs:      1000
+
+Average: 1.5130000000000001
+Std.Dev: 0.015813952101896636
+Maximum: 2
+Time: 1370
+Colors:    2 
+Positions: 2
+Runs:      1000
+
+Average: 2.045
+Std.Dev: 0.022616066998629236
+Maximum: 3
+Time: 1040
+Colors:    2 
+Positions: 3
+Runs:      1000
+
+Average: 2.396
+Std.Dev: 0.025804066537076085
+Maximum: 4
+Time: 1100
+Colors:    2 
+Positions: 4
+Runs:      1000
+
+Average: 2.824
+Std.Dev: 0.029561764120192454
+Maximum: 5
+Time: 1210
+Colors:    2 
+Positions: 5
+Runs:      1000
+
+Average: 3.2560000000000002
+Std.Dev: 0.034023839019452544
+Maximum: 6
+Time: 1430
+Colors:    2 
+Positions: 6
+Runs:      1000
+
+Average: 3.657
+Std.Dev: 0.03686067972392411
+Maximum: 7
+Time: 1650
+Colors:    2 
+Positions: 7
+Runs:      1000
+
+Average: 4.056
+Std.Dev: 0.039451494527082506
+Maximum: 8
+Time: 1920
+Colors:    2 
+Positions: 8
+Runs:      1000
+
+Average: 4.46
+Std.Dev: 0.041618891529353975
+Maximum: 8
+Time: 2520
+Colors:    3 
+Positions: 1
+Runs:      1000
+
+Average: 1.987
+Std.Dev: 0.026105794615611924
+Maximum: 3
+Time: 1160
+Colors:    3 
+Positions: 2
+Runs:      1000
+
+Average: 2.439
+Std.Dev: 0.025038089102523496
+Maximum: 4
+Time: 1150
+Colors:    3 
+Positions: 3
+Runs:      1000
+
+Average: 2.874
+Std.Dev: 0.024097815351286613
+Maximum: 5
+Time: 1270
+Colors:    3 
+Positions: 4
+Runs:      1000
+
+Average: 3.2600000000000002
+Std.Dev: 0.02512033102948747
+Maximum: 5
+Time: 1420
+Colors:    3 
+Positions: 5
+Runs:      1000
+
+Average: 3.581
+Std.Dev: 0.02580901209083961
+Maximum: 6
+Time: 1870
+Colors:    3 
+Positions: 6
+Runs:      1000
+
+Average: 3.899
+Std.Dev: 0.02737788429642708
+Maximum: 6
+Time: 2690
+Colors:    3 
+Positions: 7
+Runs:      1000
+
+Average: 4.333
+Std.Dev: 0.02886076824937174
+Maximum: 7
+Time: 4840
+Colors:    3 
+Positions: 8
+Runs:      1000
+
+Average: 4.752
+Std.Dev: 0.030845541775878203
+Maximum: 8
+Time: 9550
+Colors:    4 
+Positions: 1
+Runs:      1000
+
+Average: 2.5300000000000002
+Std.Dev: 0.03567032901968206
+Maximum: 4
+Time: 1100
+Colors:    4 
+Positions: 2
+Runs:      1000
+
+Average: 3.001
+Std.Dev: 0.028138777350673765
+Maximum: 5
+Time: 1210
+Colors:    4 
+Positions: 3
+Runs:      1000
+
+Average: 3.42
+Std.Dev: 0.02550000490686718
+Maximum: 6
+Time: 1430
+Colors:    4 
+Positions: 4
+Runs:      1000
+
+Average: 3.774
+Std.Dev: 0.025682359385063976
+Maximum: 6
+Time: 1700
+Colors:    4 
+Positions: 5
+Runs:      1000
+
+Average: 4.1770000000000005
+Std.Dev: 0.024784779306769814
+Maximum: 7
+Time: 2750
+Colors:    4 
+Positions: 6
+Runs:      1000
+
+Average: 4.613
+Std.Dev: 0.02626634578545179
+Maximum: 7
+Time: 5650
+Colors:    4 
+Positions: 7
+Runs:      1000
+
+Average: 5.0040000000000004
+Std.Dev: 0.027142599741379246
+Maximum: 8
+Time: 13680
+Colors:    4 
+Positions: 8
+Runs:      1000
+
+Average: 5.495
+Std.Dev: 0.02951009735405571
+Maximum: 8
+Time: 35810
+Colors:    5 
+Positions: 1
+Runs:      1000
+
+Average: 3.032
+Std.Dev: 0.044665097906206035
+Maximum: 5
+Time: 1160
+Colors:    5 
+Positions: 2
+Runs:      1000
+
+Average: 3.474
+Std.Dev: 0.03277801699917794
+Maximum: 6
+Time: 1260
+Colors:    5 
+Positions: 3
+Runs:      1000
+
+Average: 3.856
+Std.Dev: 0.027092397420641793
+Maximum: 6
+Time: 1480
+Colors:    5 
+Positions: 4
+Runs:      1000
+
+Average: 4.242
+Std.Dev: 0.02642222803122655
+Maximum: 6
+Time: 2200
+Colors:    5 
+Positions: 5
+Runs:      1000
+
+Average: 4.666
+Std.Dev: 0.025750866142852498
+Maximum: 7
+Time: 4280
+Colors:    5 
+Positions: 6
+Runs:      1000
+
+Average: 5.123
+Std.Dev: 0.02589481688565381
+Maximum: 8
+Time: 11320
+Colors:    5 
+Positions: 7
+Runs:      1000
+
+Average: 5.5440000000000005
+Std.Dev: 0.027583053217960205
+Maximum: 9
+Time: 33560
+Colors:    5 
+Positions: 8
+Runs:      1000
+
+Average: 6.075
+Std.Dev: 0.031214569504469374
+Maximum: 9
+Time: 104900
+Colors:    6 
+Positions: 1
+Runs:      1000
+
+Average: 3.555
+Std.Dev: 0.05438688199311423
+Maximum: 6
+Time: 1100
+Colors:    6 
+Positions: 2
+Runs:      1000
+
+Average: 3.9170000000000003
+Std.Dev: 0.03791501745415065
+Maximum: 7
+Time: 1320
+Colors:    6 
+Positions: 3
+Runs:      1000
+
+Average: 4.344
+Std.Dev: 0.03060393112984998
+Maximum: 7
+Time: 1700
+Colors:    6 
+Positions: 4
+Runs:      1000
+
+Average: 4.7
+Std.Dev: 0.026696679806910685
+Maximum: 7
+Time: 2850
+Colors:    6 
+Positions: 5
+Runs:      1000
+
+Average: 5.18
+Std.Dev: 0.0269132741286586
+Maximum: 9
+Time: 6760
+Colors:    6 
+Positions: 6
+Runs:      1000
+
+Average: 5.628
+Std.Dev: 0.026120840306129094
+Maximum: 8
+Time: 22080
+Colors:    6 
+Positions: 7
+Runs:      1000
+
+Average: 6.081
+Std.Dev: 0.028970299934213288
+Maximum: 9
+Time: 75630
+Colors:    6 
+Positions: 8
+Runs:      1000
+
+Average: 6.656000000000001
+Std.Dev: 0.03175960756484048
+Maximum: 10
+Time: 257710
+Colors:    7 
+Positions: 1
+Runs:      1000
+
+Average: 3.97
+Std.Dev: 0.0628892284501492
+Maximum: 7
+Time: 1210
+Colors:    7 
+Positions: 2
+Runs:      1000
+
+Average: 4.408
+Std.Dev: 0.044333976829306676
+Maximum: 8
+Time: 1370
+Colors:    7 
+Positions: 3
+Runs:      1000
+
+Average: 4.659
+Std.Dev: 0.033761795847656845
+Maximum: 8
+Time: 1930
+Colors:    7 
+Positions: 4
+Runs:      1000
+
+Average: 5.0520000000000005
+Std.Dev: 0.030036614293195533
+Maximum: 8
+Time: 3680
+Colors:    7 
+Positions: 5
+Runs:      1000
+
+Colors:    2 
+Positions: 9
+Runs:      1000
+
+Average: 5.025
+Std.Dev: 0.043246332159447294
+Maximum: 9
+Time: 8680
+Colors:    2 
+Positions: 10
+Runs:      1000
+
+Average: 5.497
+Std.Dev: 0.044158135614413584
+Maximum: 10
+Time: 9720
+Colors:    2 
+Positions: 11
+Runs:      1000
+
+Average: 5.873
+Std.Dev: 0.04350590492983411
+Maximum: 10
+Time: 16910
+Colors:    3 
+Positions: 9
+Runs:      1000
+
+Average: 5.127
+Std.Dev: 0.03165237546966851
+Maximum: 8
+Time: 32790
+Colors:    3 
+Positions: 10
+Runs:      1000
+
+Average: 5.508
+Std.Dev: 0.032756816222108784
+Maximum: 8
+Time: 90080
+-------------------
+everything below has 100 runs
+
