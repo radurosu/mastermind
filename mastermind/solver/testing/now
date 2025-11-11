@@ -1,0 +1,2602 @@
+Welcome to the MasterMind solver!
+with range
+1
+eval
+40 -1
+chosing 1 40
+327 -1
+chosing 2 40
+1121 -1
+chosing 3 40
+53 -1
+chosing 4 40
+392 -1
+chosing 5 40
+163 -1
+chosing 6 40
+662 -1
+chosing 7 40
+676 -1
+chosing 8 40
+1162 -1
+chosing 9 40
+264 -1
+chosing 10 40
+764 -1
+chosing 11 40
+179 -1
+chosing 12 40
+719 -1
+chosing 13 40
+624 -1
+chosing 14 40
+978 -1
+chosing 15 40
+1161 -1
+chosing 16 40
+1095 -1
+chosing 17 40
+646 -1
+chosing 18 40
+406 -1
+chosing 19 40
+619 -1
+chosing 20 40
+341 -1
+chosing 21 40
+826 -1
+chosing 22 40
+812 -1
+chosing 23 40
+1204 -1
+chosing 24 40
+795 -1
+chosing 25 40
+717 -1
+chosing 26 40
+127 -1
+chosing 27 40
+982 -1
+chosing 28 40
+1236 -1
+chosing 29 40
+964 -1
+chosing 30 40
+39 -1
+chosing 31 40
+1076 -1
+chosing 32 40
+973 -1
+chosing 33 40
+420 -1
+chosing 34 40
+775 -1
+chosing 35 40
+886 -1
+chosing 36 40
+1069 -1
+chosing 37 40
+863 -1
+chosing 38 40
+691 -1
+chosing 39 40
+334 -1
+chosing 40 40
+647 -1
+chosing 41 40
+413 -1
+chosing 42 40
+1125 -1
+chosing 43 40
+1102 -1
+chosing 44 40
+871 -1
+chosing 45 40
+885 -1
+chosing 46 40
+603 -1
+chosing 47 40
+84 -1
+chosing 48 40
+103 -1
+chosing 49 40
+648 -1
+chosing 50 40
+399 -1
+chosing 51 40
+1145 -1
+chosing 52 40
+970 -1
+chosing 53 40
+1100 -1
+chosing 54 40
+602 -1
+chosing 55 40
+461 -1
+chosing 56 40
+402 -1
+chosing 57 40
+67 -1
+chosing 58 40
+409 -1
+chosing 59 40
+684 -1
+chosing 60 40
+231 -1
+chosing 61 40
+24 -1
+chosing 62 40
+1017 -1
+chosing 63 40
+819 -1
+chosing 64 40
+1112 -1
+chosing 65 40
+917 -1
+chosing 66 40
+11 -1
+chosing 67 40
+938 -1
+chosing 68 40
+785 -1
+chosing 69 40
+815 -1
+chosing 70 40
+987 -1
+chosing 71 40
+520 -1
+chosing 72 40
+1123 -1
+chosing 73 40
+856 -1
+chosing 74 40
+1018 -1
+chosing 75 40
+748 -1
+chosing 76 40
+637 -1
+chosing 77 40
+988 -1
+chosing 78 40
+674 -1
+chosing 79 40
+857 -1
+chosing 80 40
+861 -1
+chosing 81 40
+1221 -1
+chosing 82 40
+222 -1
+chosing 83 40
+1117 -1
+chosing 84 40
+730 -1
+chosing 85 40
+882 -1
+chosing 86 40
+685 -1
+chosing 87 40
+758 -1
+chosing 88 40
+116 -1
+chosing 89 40
+786 -1
+chosing 90 40
+567 -1
+chosing 91 40
+1023 -1
+chosing 92 40
+809 -1
+chosing 93 40
+1244 -1
+chosing 94 40
+914 -1
+chosing 95 40
+512 -1
+chosing 96 40
+492 -1
+chosing 97 40
+1188 -1
+chosing 98 40
+411 -1
+chosing 99 40
+457 -1
+chosing 100 40
+198 -1
+chosing 101 40
+1088 -1
+chosing 102 40
+979 -1
+chosing 103 40
+584 -1
+chosing 104 40
+88 -1
+chosing 105 40
+1290 -1
+chosing 106 40
+511 -1
+chosing 107 40
+368 -1
+chosing 108 40
+1124 -1
+chosing 109 40
+1008 -1
+chosing 110 40
+464 -1
+chosing 111 40
+859 -1
+chosing 112 40
+1015 -1
+chosing 113 40
+1280 -1
+chosing 114 40
+1154 -1
+chosing 115 40
+616 -1
+chosing 116 40
+783 -1
+chosing 117 40
+293 -1
+chosing 118 40
+20 -1
+chosing 119 40
+622 -1
+chosing 120 40
+459 -1
+chosing 121 40
+1278 -1
+chosing 122 40
+391 -1
+chosing 123 40
+800 -1
+chosing 124 40
+887 -1
+chosing 125 40
+101 -1
+chosing 126 40
+731 -1
+chosing 127 40
+181 -1
+chosing 128 40
+1025 -1
+chosing 129 40
+858 -1
+chosing 130 40
+338 -1
+chosing 131 40
+76 -1
+chosing 132 40
+456 -1
+chosing 133 40
+922 -1
+chosing 134 40
+403 -1
+chosing 135 40
+696 -1
+chosing 136 40
+742 -1
+chosing 137 40
+510 -1
+chosing 138 40
+642 -1
+chosing 139 40
+343 -1
+chosing 140 40
+611 -1
+chosing 141 40
+36 -1
+chosing 142 40
+58 -1
+chosing 143 40
+822 -1
+chosing 144 40
+486 -1
+chosing 145 40
+236 -1
+chosing 146 40
+1248 -1
+chosing 147 40
+65 -1
+chosing 148 40
+1156 -1
+chosing 149 40
+1159 -1
+chosing 150 40
+1043 -1
+chosing 151 40
+515 -1
+chosing 152 40
+94 -1
+chosing 153 40
+141 -1
+chosing 154 40
+1092 -1
+chosing 155 40
+901 -1
+chosing 156 40
+118 -1
+chosing 157 40
+536 -1
+chosing 158 40
+1223 -1
+chosing 159 40
+723 -1
+chosing 160 40
+6 -1
+chosing 161 40
+550 -1
+chosing 162 40
+645 -1
+chosing 163 40
+1113 -1
+chosing 164 40
+1048 -1
+chosing 165 40
+49 -1
+chosing 166 40
+1046 -1
+chosing 167 40
+1215 -1
+chosing 168 40
+636 -1
+chosing 169 40
+990 -1
+chosing 170 40
+476 -1
+chosing 171 40
+449 -1
+chosing 172 40
+830 -1
+chosing 173 40
+107 -1
+chosing 174 40
+1078 -1
+chosing 175 40
+971 -1
+chosing 176 40
+806 -1
+chosing 177 40
+1027 -1
+chosing 178 40
+962 -1
+chosing 179 40
+537 -1
+chosing 180 40
+382 -1
+chosing 181 40
+173 -1
+chosing 182 40
+1114 -1
+chosing 183 40
+961 -1
+chosing 184 40
+753 -1
+chosing 185 40
+659 -1
+chosing 186 40
+448 -1
+chosing 187 40
+690 -1
+chosing 188 40
+1288 -1
+chosing 189 40
+555 -1
+chosing 190 40
+321 -1
+chosing 191 40
+774 -1
+chosing 192 40
+712 -1
+chosing 193 40
+227 -1
+chosing 194 40
+949 -1
+chosing 195 40
+833 -1
+chosing 196 40
+1126 -1
+chosing 197 40
+1252 -1
+chosing 198 40
+664 -1
+chosing 199 40
+837 -1
+chosing 200 40
+746 -1
+chosing 201 40
+854 -1
+chosing 202 40
+1174 -1
+chosing 203 40
+1109 -1
+chosing 204 40
+1032 -1
+chosing 205 40
+653 -1
+chosing 206 40
+444 -1
+chosing 207 40
+991 -1
+chosing 208 40
+1179 -1
+chosing 209 40
+581 -1
+chosing 210 40
+1232 -1
+chosing 211 40
+534 -1
+chosing 212 40
+607 -1
+chosing 213 40
+246 -1
+chosing 214 40
+614 -1
+chosing 215 40
+1108 -1
+chosing 216 40
+652 -1
+chosing 217 40
+1144 -1
+chosing 218 40
+926 -1
+chosing 219 40
+838 -1
+chosing 220 40
+906 -1
+chosing 221 40
+554 -1
+chosing 222 40
+147 -1
+chosing 223 40
+498 -1
+chosing 224 40
+95 -1
+chosing 225 40
+1264 -1
+chosing 226 40
+169 -1
+chosing 227 40
+221 -1
+chosing 228 40
+1035 -1
+chosing 229 40
+435 -1
+chosing 230 40
+387 -1
+chosing 231 40
+59 -1
+chosing 232 40
+1151 -1
+chosing 233 40
+90 -1
+chosing 234 40
+808 -1
+chosing 235 40
+849 -1
+chosing 236 40
+976 -1
+chosing 237 40
+1071 -1
+chosing 238 40
+784 -1
+chosing 239 40
+658 -1
+chosing 240 40
+1185 -1
+chosing 241 40
+419 -1
+chosing 242 40
+62 -1
+chosing 243 40
+835 -1
+chosing 244 40
+215 -1
+chosing 245 40
+811 -1
+chosing 246 40
+832 -1
+chosing 247 40
+1206 -1
+chosing 248 40
+1111 -1
+chosing 249 40
+1155 -1
+chosing 250 40
+249 -1
+chosing 251 40
+13 -1
+chosing 252 40
+356 -1
+chosing 253 40
+1292 -1
+chosing 254 40
+466 -1
+chosing 255 40
+44 -1
+chosing 256 40
+542 -1
+chosing 257 40
+91 -1
+chosing 258 40
+175 -1
+chosing 259 40
+339 -1
+chosing 260 40
+1287 -1
+chosing 261 40
+178 -1
+chosing 262 40
+408 -1
+chosing 263 40
+649 -1
+chosing 264 40
+1077 -1
+chosing 265 40
+877 -1
+chosing 266 40
+1250 -1
+chosing 267 40
+864 -1
+chosing 268 40
+458 -1
+chosing 269 40
+394 -1
+chosing 270 40
+164 -1
+chosing 271 40
+767 -1
+chosing 272 40
+702 -1
+chosing 273 40
+1295 -1
+chosing 274 40
+216 -1
+chosing 275 40
+1166 -1
+chosing 276 40
+472 -1
+chosing 277 40
+704 -1
+chosing 278 40
+1233 -1
+chosing 279 40
+946 -1
+chosing 280 40
+1181 -1
+chosing 281 40
+478 -1
+chosing 282 40
+219 -1
+chosing 283 40
+921 -1
+chosing 284 40
+418 -1
+chosing 285 40
+60 -1
+chosing 286 40
+1263 -1
+chosing 287 40
+1279 -1
+chosing 288 40
+481 -1
+chosing 289 40
+1281 -1
+chosing 290 40
+1096 -1
+chosing 291 40
+111 -1
+chosing 292 40
+1243 -1
+chosing 293 40
+143 -1
+chosing 294 40
+331 -1
+chosing 295 40
+128 -1
+chosing 296 40
+100 -1
+chosing 297 40
+524 -1
+chosing 298 40
+721 -1
+chosing 299 40
+930 -1
+chosing 300 40
+252 -1
+chosing 301 40
+1030 -1
+chosing 302 40
+309 -1
+chosing 303 40
+1167 -1
+chosing 304 40
+1061 -1
+chosing 305 40
+1191 -1
+chosing 306 40
+915 -1
+chosing 307 40
+1198 -1
+chosing 308 40
+336 -1
+chosing 309 40
+805 -1
+chosing 310 40
+16 -1
+chosing 311 40
+247 -1
+chosing 312 40
+695 -1
+chosing 313 40
+605 -1
+chosing 314 40
+410 -1
+chosing 315 40
+594 -1
+chosing 316 40
+1140 -1
+chosing 317 40
+580 -1
+chosing 318 40
+313 -1
+chosing 319 40
+125 -1
+chosing 320 40
+364 -1
+chosing 321 40
+617 -1
+chosing 322 40
+589 -1
+chosing 323 40
+848 -1
+chosing 324 40
+93 -1
+chosing 325 40
+1213 -1
+chosing 326 40
+75 -1
+chosing 327 40
+966 -1
+chosing 328 40
+1099 -1
+chosing 329 40
+541 -1
+chosing 330 40
+137 -1
+chosing 331 40
+1119 -1
+chosing 332 40
+135 -1
+chosing 333 40
+333 -1
+chosing 334 40
+735 -1
+chosing 335 40
+1171 -1
+chosing 336 40
+828 -1
+chosing 337 40
+1255 -1
+chosing 338 40
+1219 -1
+chosing 339 40
+1073 -1
+chosing 340 40
+1086 -1
+chosing 341 40
+563 -1
+chosing 342 40
+900 -1
+chosing 343 40
+226 -1
+chosing 344 40
+1103 -1
+chosing 345 40
+776 -1
+chosing 346 40
+132 -1
+chosing 347 40
+0 -1
+chosing 348 40
+1079 -1
+chosing 349 40
+876 -1
+chosing 350 40
+761 -1
+chosing 351 40
+573 -1
+chosing 352 40
+972 -1
+chosing 353 40
+847 -1
+chosing 354 40
+1220 -1
+chosing 355 40
+38 -1
+chosing 356 40
+350 -1
+chosing 357 40
+680 -1
+chosing 358 40
+146 -1
+chosing 359 40
+708 -1
+chosing 360 40
+750 -1
+chosing 361 40
+681 -1
+chosing 362 40
+108 -1
+chosing 363 40
+1265 -1
+chosing 364 40
+25 -1
+chosing 365 40
+872 -1
+chosing 366 40
+846 -1
+chosing 367 40
+1060 -1
+chosing 368 40
+852 -1
+chosing 369 40
+768 -1
+chosing 370 40
+375 -1
+chosing 371 40
+957 -1
+chosing 372 40
+393 -1
+chosing 373 40
+984 -1
+chosing 374 40
+497 -1
+chosing 375 40
+1197 -1
+chosing 376 40
+1141 -1
+chosing 377 40
+799 -1
+chosing 378 40
+841 -1
+chosing 379 40
+706 -1
+chosing 380 40
+355 -1
+chosing 381 40
+544 -1
+chosing 382 40
+240 -1
+chosing 383 40
+124 -1
+chosing 384 40
+1038 -1
+chosing 385 40
+82 -1
+chosing 386 40
+552 -1
+chosing 387 40
+596 -1
+chosing 388 40
+191 -1
+chosing 389 40
+701 -1
+chosing 390 40
+969 -1
+chosing 391 40
+1063 -1
+chosing 392 40
+634 -1
+chosing 393 40
+72 -1
+chosing 394 40
+177 -1
+chosing 395 40
+453 -1
+chosing 396 40
+248 -1
+chosing 397 40
+1134 -1
+chosing 398 40
+274 -1
+chosing 399 40
+919 -1
+chosing 400 40
+440 -1
+chosing 401 40
+939 -1
+chosing 402 40
+1176 -1
+chosing 403 40
+781 -1
+chosing 404 40
+320 -1
+chosing 405 40
+493 -1
+chosing 406 40
+239 -1
+chosing 407 40
+1182 -1
+chosing 408 40
+874 -1
+chosing 409 40
+17 -1
+chosing 410 40
+1003 -1
+chosing 411 40
+359 -1
+chosing 412 40
+755 -1
+chosing 413 40
+185 -1
+chosing 414 40
+204 -1
+chosing 415 40
+869 -1
+chosing 416 40
+237 -1
+chosing 417 40
+475 -1
+chosing 418 40
+1203 -1
+chosing 419 40
+202 -1
+chosing 420 40
+952 -1
+chosing 421 40
+431 -1
+chosing 422 40
+1284 -1
+chosing 423 40
+839 -1
+chosing 424 40
+851 -1
+chosing 425 40
+545 -1
+chosing 426 40
+1094 -1
+chosing 427 40
+598 -1
+chosing 428 40
+601 -1
+chosing 429 40
+656 -1
+chosing 430 40
+903 -1
+chosing 431 40
+1115 -1
+chosing 432 40
+396 -1
+chosing 433 40
+488 -1
+chosing 434 40
+50 -1
+chosing 435 40
+371 -1
+chosing 436 40
+114 -1
+chosing 437 40
+623 -1
+chosing 438 40
+347 -1
+chosing 439 40
+643 -1
+chosing 440 40
+834 -1
+chosing 441 40
+417 -1
+chosing 442 40
+944 -1
+chosing 443 40
+661 -1
+chosing 444 40
+266 -1
+chosing 445 40
+873 -1
+chosing 446 40
+1089 -1
+chosing 447 40
+1000 -1
+chosing 448 40
+275 -1
+chosing 449 40
+1187 -1
+chosing 450 40
+1070 -1
+chosing 451 40
+491 -1
+chosing 452 40
+860 -1
+chosing 453 40
+422 -1
+chosing 454 40
+428 -1
+chosing 455 40
+89 -1
+chosing 456 40
+421 -1
+chosing 457 40
+517 -1
+chosing 458 40
+209 -1
+chosing 459 40
+1254 -1
+chosing 460 40
+45 -1
+chosing 461 40
+924 -1
+chosing 462 40
+998 -1
+chosing 463 40
+654 -1
+chosing 464 40
+751 -1
+chosing 465 40
+496 -1
+chosing 466 40
+1172 -1
+chosing 467 40
+7 -1
+chosing 468 40
+1228 -1
+chosing 469 40
+22 -1
+chosing 470 40
+528 -1
+chosing 471 40
+1189 -1
+chosing 472 40
+789 -1
+chosing 473 40
+1091 -1
+chosing 474 40
+78 -1
+chosing 475 40
+561 -1
+chosing 476 40
+10 -1
+chosing 477 40
+110 -1
+chosing 478 40
+484 -1
+chosing 479 40
+738 -1
+chosing 480 40
+297 -1
+chosing 481 40
+362 -1
+chosing 482 40
+69 -1
+chosing 483 40
+1147 -1
+chosing 484 40
+629 -1
+chosing 485 40
+586 -1
+chosing 486 40
+831 -1
+chosing 487 40
+923 -1
+chosing 488 40
+675 -1
+chosing 489 40
+1286 -1
+chosing 490 40
+913 -1
+chosing 491 40
+516 -1
+chosing 492 40
+505 -1
+chosing 493 40
+1294 -1
+chosing 494 40
+46 -1
+chosing 495 40
+981 -1
+chosing 496 40
+217 -1
+chosing 497 40
+934 -1
+chosing 498 40
+473 -1
+chosing 499 40
+154 -1
+chosing 500 40
+592 -1
+chosing 501 40
+302 -1
+chosing 502 40
+941 -1
+chosing 503 40
+620 -1
+chosing 504 40
+722 -1
+chosing 505 40
+150 -1
+chosing 506 40
+585 -1
+chosing 507 40
+326 -1
+chosing 508 40
+1026 -1
+chosing 509 40
+376 -1
+chosing 510 40
+890 -1
+chosing 511 40
+1229 -1
+chosing 512 40
+797 -1
+chosing 513 40
+113 -1
+chosing 514 40
+96 -1
+chosing 515 40
+452 -1
+chosing 516 40
+1013 -1
+chosing 517 40
+490 -1
+chosing 518 40
+499 -1
+chosing 519 40
+1058 -1
+chosing 520 40
+390 -1
+chosing 521 40
+310 -1
+chosing 522 40
+1002 -1
+chosing 523 40
+1273 -1
+chosing 524 40
+1195 -1
+chosing 525 40
+1241 -1
+chosing 526 40
+345 -1
+chosing 527 40
+1042 -1
+chosing 528 40
+1235 -1
+chosing 529 40
+443 -1
+chosing 530 40
+1049 -1
+chosing 531 40
+278 -1
+chosing 532 40
+138 -1
+chosing 533 40
+315 -1
+chosing 534 40
+606 -1
+chosing 535 40
+1246 -1
+chosing 536 40
+574 -1
+chosing 537 40
+777 -1
+chosing 538 40
+888 -1
+chosing 539 40
+626 -1
+chosing 540 40
+70 -1
+chosing 541 40
+549 -1
+chosing 542 40
+1129 -1
+chosing 543 40
+747 -1
+chosing 544 40
+232 -1
+chosing 545 40
+468 -1
+chosing 546 40
+83 -1
+chosing 547 40
+120 -1
+chosing 548 40
+1075 -1
+chosing 549 40
+337 -1
+chosing 550 40
+548 -1
+chosing 551 40
+705 -1
+chosing 552 40
+942 -1
+chosing 553 40
+804 -1
+chosing 554 40
+301 -1
+chosing 555 40
+529 -1
+chosing 556 40
+85 -1
+chosing 557 40
+909 -1
+chosing 558 40
+1165 -1
+chosing 559 40
+1192 -1
+chosing 560 40
+212 -1
+chosing 561 40
+289 -1
+chosing 562 40
+771 -1
+chosing 563 40
+935 -1
+chosing 564 40
+15 -1
+chosing 565 40
+632 -1
+chosing 566 40
+671 -1
+chosing 567 40
+507 -1
+chosing 568 40
+374 -1
+chosing 569 40
+1149 -1
+chosing 570 40
+531 -1
+chosing 571 40
+1090 -1
+chosing 572 40
+207 -1
+chosing 573 40
+48 -1
+chosing 574 40
+265 -1
+chosing 575 40
+485 -1
+chosing 576 40
+192 -1
+chosing 577 40
+130 -1
+chosing 578 40
+348 -1
+chosing 579 40
+955 -1
+chosing 580 40
+1106 -1
+chosing 581 40
+698 -1
+chosing 582 40
+487 -1
+chosing 583 40
+1283 -1
+chosing 584 40
+540 -1
+chosing 585 40
+1087 -1
+chosing 586 40
+1120 -1
+chosing 587 40
+587 -1
+chosing 588 40
+233 -1
+chosing 589 40
+203 -1
+chosing 590 40
+5 -1
+chosing 591 40
+794 -1
+chosing 592 40
+349 -1
+chosing 593 40
+1031 -1
+chosing 594 40
+1269 -1
+chosing 595 40
+1168 -1
+chosing 596 40
+1082 -1
+chosing 597 40
+211 -1
+chosing 598 40
+1276 -1
+chosing 599 40
+526 -1
+chosing 600 40
+754 -1
+chosing 601 40
+713 -1
+chosing 602 40
+180 -1
+chosing 603 40
+1132 -1
+chosing 604 40
+688 -1
+chosing 605 40
+1037 -1
+chosing 606 40
+633 -1
+chosing 607 40
+460 -1
+chosing 608 40
+595 -1
+chosing 609 40
+947 -1
+chosing 610 40
+383 -1
+chosing 611 40
+818 -1
+chosing 612 40
+4 -1
+chosing 613 40
+1285 -1
+chosing 614 40
+1217 -1
+chosing 615 40
+131 -1
+chosing 616 40
+1010 -1
+chosing 617 40
+18 -1
+chosing 618 40
+282 -1
+chosing 619 40
+323 -1
+chosing 620 40
+35 -1
+chosing 621 40
+144 -1
+chosing 622 40
+621 -1
+chosing 623 40
+294 -1
+chosing 624 40
+263 -1
+chosing 625 40
+271 -1
+chosing 626 40
+1247 -1
+chosing 627 40
+427 -1
+chosing 628 40
+817 -1
+chosing 629 40
+760 -1
+chosing 630 40
+518 -1
+chosing 631 40
+752 -1
+chosing 632 40
+796 -1
+chosing 633 40
+1160 -1
+chosing 634 40
+470 -1
+chosing 635 40
+262 -1
+chosing 636 40
+161 -1
+chosing 637 40
+1225 -1
+chosing 638 40
+897 -1
+chosing 639 40
+878 -1
+chosing 640 40
+123 -1
+chosing 641 40
+311 -1
+chosing 642 40
+741 -1
+chosing 643 40
+1208 -1
+chosing 644 40
+1036 -1
+chosing 645 40
+373 -1
+chosing 646 40
+778 -1
+chosing 647 40
+1169 -1
+chosing 648 40
+1116 -1
+chosing 649 40
+1222 -1
+chosing 650 40
+140 -1
+chosing 651 40
+1227 -1
+chosing 652 40
+977 -1
+chosing 653 40
+523 -1
+chosing 654 40
+423 -1
+chosing 655 40
+159 -1
+chosing 656 40
+525 -1
+chosing 657 40
+568 -1
+chosing 658 40
+462 -1
+chosing 659 40
+1201 -1
+chosing 660 40
+1249 -1
+chosing 661 40
+258 -1
+chosing 662 40
+925 -1
+chosing 663 40
+996 -1
+chosing 664 40
+608 -1
+chosing 665 40
+689 -1
+chosing 666 40
+9 -1
+chosing 667 40
+765 -1
+chosing 668 40
+407 -1
+chosing 669 40
+365 -1
+chosing 670 40
+119 -1
+chosing 671 40
+1153 -1
+chosing 672 40
+1267 -1
+chosing 673 40
+880 -1
+chosing 674 40
+679 -1
+chosing 675 40
+1240 -1
+chosing 676 40
+820 -1
+chosing 677 40
+245 -1
+chosing 678 40
+1 -1
+chosing 679 40
+370 -1
+chosing 680 40
+401 -1
+chosing 681 40
+1016 -1
+chosing 682 40
+509 -1
+chosing 683 40
+958 -1
+chosing 684 40
+1270 -1
+chosing 685 40
+1277 -1
+chosing 686 40
+599 -1
+chosing 687 40
+117 -1
+chosing 688 40
+79 -1
+chosing 689 40
+855 -1
+chosing 690 40
+593 -1
+chosing 691 40
+644 -1
+chosing 692 40
+1275 -1
+chosing 693 40
+1097 -1
+chosing 694 40
+243 -1
+chosing 695 40
+912 -1
+chosing 696 40
+201 -1
+chosing 697 40
+992 -1
+chosing 698 40
+945 -1
+chosing 699 40
+361 -1
+chosing 700 40
+905 -1
+chosing 701 40
+867 -1
+chosing 702 40
+234 -1
+chosing 703 40
+710 -1
+chosing 704 40
+388 -1
+chosing 705 40
+8 -1
+chosing 706 40
+951 -1
+chosing 707 40
+635 -1
+chosing 708 40
+745 -1
+chosing 709 40
+27 -1
+chosing 710 40
+1258 -1
+chosing 711 40
+133 -1
+chosing 712 40
+597 -1
+chosing 713 40
+57 -1
+chosing 714 40
+148 -1
+chosing 715 40
+160 -1
+chosing 716 40
+539 -1
+chosing 717 40
+33 -1
+chosing 718 40
+1256 -1
+chosing 719 40
+251 -1
+chosing 720 40
+1237 -1
+chosing 721 40
+733 -1
+chosing 722 40
+115 -1
+chosing 723 40
+47 -1
+chosing 724 40
+489 -1
+chosing 725 40
+1074 -1
+chosing 726 40
+26 -1
+chosing 727 40
+1098 -1
+chosing 728 40
+43 -1
+chosing 729 40
+918 -1
+chosing 730 40
+1024 -1
+chosing 731 40
+183 -1
+chosing 732 40
+693 -1
+chosing 733 40
+1122 -1
+chosing 734 40
+136 -1
+chosing 735 40
+71 -1
+chosing 736 40
+762 -1
+chosing 737 40
+1081 -1
+chosing 738 40
+650 -1
+chosing 739 40
+257 -1
+chosing 740 40
+1104 -1
+chosing 741 40
+404 -1
+chosing 742 40
+631 -1
+chosing 743 40
+1226 -1
+chosing 744 40
+465 -1
+chosing 745 40
+715 -1
+chosing 746 40
+773 -1
+chosing 747 40
+591 -1
+chosing 748 40
+1257 -1
+chosing 749 40
+881 -1
+chosing 750 40
+953 -1
+chosing 751 40
+279 -1
+chosing 752 40
+546 -1
+chosing 753 40
+655 -1
+chosing 754 40
+726 -1
+chosing 755 40
+1238 -1
+chosing 756 40
+937 -1
+chosing 757 40
+214 -1
+chosing 758 40
+1207 -1
+chosing 759 40
+1199 -1
+chosing 760 40
+126 -1
+chosing 761 40
+995 -1
+chosing 762 40
+556 -1
+chosing 763 40
+432 -1
+chosing 764 40
+329 -1
+chosing 765 40
+1029 -1
+chosing 766 40
+42 -1
+chosing 767 40
+801 -1
+chosing 768 40
+482 -1
+chosing 769 40
+899 -1
+chosing 770 40
+522 -1
+chosing 771 40
+575 -1
+chosing 772 40
+862 -1
+chosing 773 40
+697 -1
+chosing 774 40
+298 -1
+chosing 775 40
+66 -1
+chosing 776 40
+424 -1
+chosing 777 40
+28 -1
+chosing 778 40
+960 -1
+chosing 779 40
+495 -1
+chosing 780 40
+354 -1
+chosing 781 40
+724 -1
+chosing 782 40
+657 -1
+chosing 783 40
+385 -1
+chosing 784 40
+469 -1
+chosing 785 40
+451 -1
+chosing 786 40
+292 -1
+chosing 787 40
+1080 -1
+chosing 788 40
+889 -1
+chosing 789 40
+1139 -1
+chosing 790 40
+757 -1
+chosing 791 40
+720 -1
+chosing 792 40
+1001 -1
+chosing 793 40
+287 -1
+chosing 794 40
+823 -1
+chosing 795 40
+959 -1
+chosing 796 40
+98 -1
+chosing 797 40
+1231 -1
+chosing 798 40
+187 -1
+chosing 799 40
+669 -1
+chosing 800 40
+446 -1
+chosing 801 40
+727 -1
+chosing 802 40
+340 -1
+chosing 803 40
+425 -1
+chosing 804 40
+879 -1
+chosing 805 40
+250 -1
+chosing 806 40
+725 -1
+chosing 807 40
+980 -1
+chosing 808 40
+142 -1
+chosing 809 40
+1085 -1
+chosing 810 40
+441 -1
+chosing 811 40
+1039 -1
+chosing 812 40
+1173 -1
+chosing 813 40
+670 -1
+chosing 814 40
+260 -1
+chosing 815 40
+218 -1
+chosing 816 40
+1110 -1
+chosing 817 40
+129 -1
+chosing 818 40
+1131 -1
+chosing 819 40
+576 -1
+chosing 820 40
+238 -1
+chosing 821 40
+965 -1
+chosing 822 40
+609 -1
+chosing 823 40
+176 -1
+chosing 824 40
+296 -1
+chosing 825 40
+157 -1
+chosing 826 40
+312 -1
+chosing 827 40
+412 -1
+chosing 828 40
+158 -1
+chosing 829 40
+281 -1
+chosing 830 40
+1128 -1
+chosing 831 40
+892 -1
+chosing 832 40
+12 -1
+chosing 833 40
+255 -1
+chosing 834 40
+1212 -1
+chosing 835 40
+277 -1
+chosing 836 40
+112 -1
+chosing 837 40
+744 -1
+chosing 838 40
+19 -1
+chosing 839 40
+87 -1
+chosing 840 40
+678 -1
+chosing 841 40
+950 -1
+chosing 842 40
+74 -1
+chosing 843 40
+379 -1
+chosing 844 40
+1175 -1
+chosing 845 40
+477 -1
+chosing 846 40
+1289 -1
+chosing 847 40
+707 -1
+chosing 848 40
+182 -1
+chosing 849 40
+56 -1
+chosing 850 40
+732 -1
+chosing 851 40
+1163 -1
+chosing 852 40
+447 -1
+chosing 853 40
+1143 -1
+chosing 854 40
+902 -1
+chosing 855 40
+139 -1
+chosing 856 40
+1022 -1
+chosing 857 40
+1210 -1
+chosing 858 40
+975 -1
+chosing 859 40
+1065 -1
+chosing 860 40
+1230 -1
+chosing 861 40
+300 -1
+chosing 862 40
+985 -1
+chosing 863 40
+503 -1
+chosing 864 40
+1093 -1
+chosing 865 40
+37 -1
+chosing 866 40
+1034 -1
+chosing 867 40
+932 -1
+chosing 868 40
+997 -1
+chosing 869 40
+384 -1
+chosing 870 40
+1224 -1
+chosing 871 40
+1266 -1
+chosing 872 40
+559 -1
+chosing 873 40
+821 -1
+chosing 874 40
+813 -1
+chosing 875 40
+55 -1
+chosing 876 40
+52 -1
+chosing 877 40
+692 -1
+chosing 878 40
+369 -1
+chosing 879 40
+109 -1
+chosing 880 40
+527 -1
+chosing 881 40
+803 -1
+chosing 882 40
+600 -1
+chosing 883 40
+1259 -1
+chosing 884 40
+1170 -1
+chosing 885 40
+535 -1
+chosing 886 40
+61 -1
+chosing 887 40
+1009 -1
+chosing 888 40
+213 -1
+chosing 889 40
+253 -1
+chosing 890 40
+683 -1
+chosing 891 40
+763 -1
+chosing 892 40
+1142 -1
+chosing 893 40
+415 -1
+chosing 894 40
+397 -1
+chosing 895 40
+1135 -1
+chosing 896 40
+866 -1
+chosing 897 40
+1044 -1
+chosing 898 40
+304 -1
+chosing 899 40
+3 -1
+chosing 900 40
+825 -1
+chosing 901 40
+1054 -1
+chosing 902 40
+196 -1
+chosing 903 40
+335 -1
+chosing 904 40
+31 -1
+chosing 905 40
+429 -1
+chosing 906 40
+1242 -1
+chosing 907 40
+928 -1
+chosing 908 40
+840 -1
+chosing 909 40
+151 -1
+chosing 910 40
+360 -1
+chosing 911 40
+1045 -1
+chosing 912 40
+299 -1
+chosing 913 40
+1019 -1
+chosing 914 40
+699 -1
+chosing 915 40
+195 -1
+chosing 916 40
+122 -1
+chosing 917 40
+927 -1
+chosing 918 40
+1007 -1
+chosing 919 40
+1012 -1
+chosing 920 40
+682 -1
+chosing 921 40
+936 -1
+chosing 922 40
+792 -1
+chosing 923 40
+307 -1
+chosing 924 40
+1272 -1
+chosing 925 40
+276 -1
+chosing 926 40
+787 -1
+chosing 927 40
+77 -1
+chosing 928 40
+1234 -1
+chosing 929 40
+162 -1
+chosing 930 40
+1196 -1
+chosing 931 40
+577 -1
+chosing 932 40
+625 -1
+chosing 933 40
+769 -1
+chosing 934 40
+1209 -1
+chosing 935 40
+97 -1
+chosing 936 40
+92 -1
+chosing 937 40
+168 -1
+chosing 938 40
+1068 -1
+chosing 939 40
+844 -1
+chosing 940 40
+318 -1
+chosing 941 40
+1178 -1
+chosing 942 40
+565 -1
+chosing 943 40
+353 -1
+chosing 944 40
+1056 -1
+chosing 945 40
+506 -1
+chosing 946 40
+521 -1
+chosing 947 40
+205 -1
+chosing 948 40
+687 -1
+chosing 949 40
+193 -1
+chosing 950 40
+791 -1
+chosing 951 40
+1216 -1
+chosing 952 40
+330 -1
+chosing 953 40
+1072 -1
+chosing 954 40
+303 -1
+chosing 955 40
+342 -1
+chosing 956 40
+414 -1
+chosing 957 40
+438 -1
+chosing 958 40
+1274 -1
+chosing 959 40
+267 -1
+chosing 960 40
+467 -1
+chosing 961 40
+386 -1
+chosing 962 40
+254 -1
+chosing 963 40
+286 -1
+chosing 964 40
+672 -1
+chosing 965 40
+564 -1
+chosing 966 40
+54 -1
+chosing 967 40
+740 -1
+chosing 968 40
+1148 -1
+chosing 969 40
+346 -1
+chosing 970 40
+104 -1
+chosing 971 40
+1047 -1
+chosing 972 40
+259 -1
+chosing 973 40
+1053 -1
+chosing 974 40
+929 -1
+chosing 975 40
+471 -1
+chosing 976 40
+1291 -1
+chosing 977 40
+570 -1
+chosing 978 40
+538 -1
+chosing 979 40
+736 -1
+chosing 980 40
+993 -1
+chosing 981 40
+241 -1
+chosing 982 40
+666 -1
+chosing 983 40
+41 -1
+chosing 984 40
+367 -1
+chosing 985 40
+1067 -1
+chosing 986 40
+714 -1
+chosing 987 40
+627 -1
+chosing 988 40
+450 -1
+chosing 989 40
+827 -1
+chosing 990 40
+639 -1
+chosing 991 40
+228 -1
+chosing 992 40
+533 -1
+chosing 993 40
+907 -1
+chosing 994 40
+766 -1
+chosing 995 40
+553 -1
+chosing 996 40
+994 -1
+chosing 997 40
+1180 -1
+chosing 998 40
+1004 -1
+chosing 999 40
+910 -1
+chosing 1000 40
+933 -1
+chosing 1001 40
+352 -1
+chosing 1002 40
+1253 -1
+chosing 1003 40
+288 -1
+chosing 1004 40
+454 -1
+chosing 1005 40
+896 -1
+chosing 1006 40
+105 -1
+chosing 1007 40
+845 -1
+chosing 1008 40
+963 -1
+chosing 1009 40
+749 -1
+chosing 1010 40
+583 -1
+chosing 1011 40
+663 -1
+chosing 1012 40
+677 -1
+chosing 1013 40
+1083 -1
+chosing 1014 40
+439 -1
+chosing 1015 40
+2 -1
+chosing 1016 40
+842 -1
+chosing 1017 40
+1020 -1
+chosing 1018 40
+325 -1
+chosing 1019 40
+1193 -1
+chosing 1020 40
+1268 -1
+chosing 1021 40
+434 -1
+chosing 1022 40
+186 -1
+chosing 1023 40
+508 -1
+chosing 1024 40
+1059 -1
+chosing 1025 40
+426 -1
+chosing 1026 40
+829 -1
+chosing 1027 40
+519 -1
+chosing 1028 40
+436 -1
+chosing 1029 40
+739 -1
+chosing 1030 40
+501 -1
+chosing 1031 40
+850 -1
+chosing 1032 40
+167 -1
+chosing 1033 40
+694 -1
+chosing 1034 40
+380 -1
+chosing 1035 40
+920 -1
+chosing 1036 40
+668 -1
+chosing 1037 40
+166 -1
+chosing 1038 40
+433 -1
+chosing 1039 40
+63 -1
+chosing 1040 40
+729 -1
+chosing 1041 40
+152 -1
+chosing 1042 40
+788 -1
+chosing 1043 40
+983 -1
+chosing 1044 40
+269 -1
+chosing 1045 40
+155 -1
+chosing 1046 40
+389 -1
+chosing 1047 40
+615 -1
+chosing 1048 40
+578 -1
+chosing 1049 40
+911 -1
+chosing 1050 40
+770 -1
+chosing 1051 40
+29 -1
+chosing 1052 40
+500 -1
+chosing 1053 40
+759 -1
+chosing 1054 40
+779 -1
+chosing 1055 40
+651 -1
+chosing 1056 40
+261 -1
+chosing 1057 40
+582 -1
+chosing 1058 40
+1190 -1
+chosing 1059 40
+395 -1
+chosing 1060 40
+80 -1
+chosing 1061 40
+398 -1
+chosing 1062 40
+1084 -1
+chosing 1063 40
+324 -1
+chosing 1064 40
+1052 -1
+chosing 1065 40
+437 -1
+chosing 1066 40
+782 -1
+chosing 1067 40
+630 -1
+chosing 1068 40
+865 -1
+chosing 1069 40
+145 -1
+chosing 1070 40
+810 -1
+chosing 1071 40
+843 -1
+chosing 1072 40
+344 -1
+chosing 1073 40
+1200 -1
+chosing 1074 40
+824 -1
+chosing 1075 40
+1107 -1
+chosing 1076 40
+1040 -1
+chosing 1077 40
+502 -1
+chosing 1078 40
+793 -1
+chosing 1079 40
+366 -1
+chosing 1080 40
+322 -1
+chosing 1081 40
+190 -1
+chosing 1082 40
+711 -1
+chosing 1083 40
+569 -1
+chosing 1084 40
+244 -1
+chosing 1085 40
+571 -1
+chosing 1086 40
+316 -1
+chosing 1087 40
+807 -1
+chosing 1088 40
+284 -1
+chosing 1089 40
+956 -1
+chosing 1090 40
+153 -1
+chosing 1091 40
+875 -1
+chosing 1092 40
+772 -1
+chosing 1093 40
+256 -1
+chosing 1094 40
+898 -1
+chosing 1095 40
+612 -1
+chosing 1096 40
+268 -1
+chosing 1097 40
+780 -1
+chosing 1098 40
+1127 -1
+chosing 1099 40
+1028 -1
+chosing 1100 40
+547 -1
+chosing 1101 40
+165 -1
+chosing 1102 40
+610 -1
+chosing 1103 40
+1205 -1
+chosing 1104 40
+229 -1
+chosing 1105 40
+194 -1
+chosing 1106 40
+894 -1
+chosing 1107 40
+1051 -1
+chosing 1108 40
+285 -1
+chosing 1109 40
+868 -1
+chosing 1110 40
+134 -1
+chosing 1111 40
+1251 -1
+chosing 1112 40
+1101 -1
+chosing 1113 40
+378 -1
+chosing 1114 40
+106 -1
+chosing 1115 40
+235 -1
+chosing 1116 40
+156 -1
+chosing 1117 40
+1011 -1
+chosing 1118 40
+351 -1
+chosing 1119 40
+954 -1
+chosing 1120 40
+1164 -1
+chosing 1121 40
+640 -1
+chosing 1122 40
+1064 -1
+chosing 1123 40
+280 -1
+chosing 1124 40
+1211 -1
+chosing 1125 40
+532 -1
+chosing 1126 40
+883 -1
+chosing 1127 40
+242 -1
+chosing 1128 40
+430 -1
+chosing 1129 40
+308 -1
+chosing 1130 40
+474 -1
+chosing 1131 40
+893 -1
+chosing 1132 40
+358 -1
+chosing 1133 40
+184 -1
+chosing 1134 40
+1055 -1
+chosing 1135 40
+381 -1
+chosing 1136 40
+405 -1
+chosing 1137 40
+189 -1
+chosing 1138 40
+1157 -1
+chosing 1139 40
+1118 -1
+chosing 1140 40
+283 -1
+chosing 1141 40
+686 -1
+chosing 1142 40
+1245 -1
+chosing 1143 40
+442 -1
+chosing 1144 40
+121 -1
+chosing 1145 40
+931 -1
+chosing 1146 40
+1282 -1
+chosing 1147 40
+716 -1
+chosing 1148 40
+400 -1
+chosing 1149 40
+480 -1
+chosing 1150 40
+86 -1
+chosing 1151 40
+673 -1
+chosing 1152 40
+174 -1
+chosing 1153 40
+1239 -1
+chosing 1154 40
+743 -1
+chosing 1155 40
+1214 -1
+chosing 1156 40
+230 -1
+chosing 1157 40
+968 -1
+chosing 1158 40
+1218 -1
+chosing 1159 40
+200 -1
+chosing 1160 40
+588 -1
+chosing 1161 40
+1014 -1
+chosing 1162 40
+1146 -1
+chosing 1163 40
+372 -1
+chosing 1164 40
+479 -1
+chosing 1165 40
+853 -1
+chosing 1166 40
+604 -1
+chosing 1167 40
+445 -1
+chosing 1168 40
+1105 -1
+chosing 1169 40
+948 -1
+chosing 1170 40
+363 -1
+chosing 1171 40
+989 -1
+chosing 1172 40
+317 -1
+chosing 1173 40
+916 -1
+chosing 1174 40
+291 -1
+chosing 1175 40
+377 -1
+chosing 1176 40
+223 -1
+chosing 1177 40
+1005 -1
+chosing 1178 40
+171 -1
+chosing 1179 40
+34 -1
+chosing 1180 40
+99 -1
+chosing 1181 40
+728 -1
+chosing 1182 40
+30 -1
+chosing 1183 40
+1057 -1
+chosing 1184 40
+562 -1
+chosing 1185 40
+305 -1
+chosing 1186 40
+904 -1
+chosing 1187 40
+208 -1
+chosing 1188 40
+558 -1
+chosing 1189 40
+225 -1
+chosing 1190 40
+836 -1
+chosing 1191 40
+756 -1
+chosing 1192 40
+1158 -1
+chosing 1193 40
+1262 -1
+chosing 1194 40
+463 -1
+chosing 1195 40
+270 -1
+chosing 1196 40
+319 -1
+chosing 1197 40
+1133 -1
+chosing 1198 40
+290 -1
+chosing 1199 40
+870 -1
+chosing 1200 40
+618 -1
+chosing 1201 40
+530 -1
+chosing 1202 40
+1066 -1
+chosing 1203 40
+543 -1
+chosing 1204 40
+332 -1
+chosing 1205 40
+514 -1
+chosing 1206 40
+1033 -1
+chosing 1207 40
+21 -1
+chosing 1208 40
+560 -1
+chosing 1209 40
+790 -1
+chosing 1210 40
+884 -1
+chosing 1211 40
+1136 -1
+chosing 1212 40
+1150 -1
+chosing 1213 40
+1186 -1
+chosing 1214 40
+1202 -1
+chosing 1215 40
+1152 -1
+chosing 1216 40
+1021 -1
+chosing 1217 40
+572 -1
+chosing 1218 40
+273 -1
+chosing 1219 40
+590 -1
+chosing 1220 40
+943 -1
+chosing 1221 40
+551 -1
+chosing 1222 40
+557 -1
+chosing 1223 40
+703 -1
+chosing 1224 40
+483 -1
+chosing 1225 40
+513 -1
+chosing 1226 40
+306 -1
+chosing 1227 40
+1050 -1
+chosing 1228 40
+23 -1
+chosing 1229 40
+1194 -1
+chosing 1230 40
+1138 -1
+chosing 1231 40
+1006 -1
+chosing 1232 40
+667 -1
+chosing 1233 40
+73 -1
+chosing 1234 40
+700 -1
+chosing 1235 40
+172 -1
+chosing 1236 40
+891 -1
+chosing 1237 40
+1271 -1
+chosing 1238 40
+940 -1
+chosing 1239 40
+504 -1
+chosing 1240 40
+210 -1
+chosing 1241 40
+1177 -1
+chosing 1242 40
+14 -1
+chosing 1243 40
+314 -1
+chosing 1244 40
+149 -1
+chosing 1245 40
+51 -1
+chosing 1246 40
+1293 -1
+chosing 1247 40
+814 -1
+chosing 1248 40
+188 -1
+chosing 1249 40
+68 -1
+chosing 1250 40
+895 -1
+chosing 1251 40
+295 -1
+chosing 1252 40
+1041 -1
+chosing 1253 40
+1261 -1
+chosing 1254 40
+272 -1
+chosing 1255 40
+1260 -1
+chosing 1256 40
+660 -1
+chosing 1257 40
+1130 -1
+chosing 1258 40
+1137 -1
+chosing 1259 40
+199 -1
+chosing 1260 40
+1062 -1
+chosing 1261 40
+64 -1
+chosing 1262 40
+32 -1
+chosing 1263 40
+197 -1
+chosing 1264 40
+816 -1
+chosing 1265 40
+220 -1
+chosing 1266 40
+328 -1
+chosing 1267 40
+737 -1
+chosing 1268 40
+986 -1
+chosing 1269 40
+802 -1
+chosing 1270 40
+357 -1
+chosing 1271 40
+566 -1
+chosing 1272 40
+718 -1
+chosing 1273 40
+613 -1
+chosing 1274 40
+908 -1
+chosing 1275 40
+734 -1
+chosing 1276 40
+224 -1
+chosing 1277 40
+579 -1
+chosing 1278 40
+967 -1
+chosing 1279 40
+81 -1
+chosing 1280 40
+416 -1
+chosing 1281 40
+494 -1
+chosing 1282 40
+638 -1
+chosing 1283 40
+665 -1
+chosing 1284 40
+999 -1
+chosing 1285 40
+641 -1
+chosing 1286 40
+170 -1
+chosing 1287 40
+102 -1
+chosing 1288 40
+1183 -1
+chosing 1289 40
+206 -1
+chosing 1290 40
+455 -1
+chosing 1291 40
+709 -1
+chosing 1292 40
+1184 -1
+chosing 1293 40
+974 -1
+chosing 1294 40
+628 -1
+chosing 1295 40
+798 -1
+chosing 1296 40
+..2
+ The computer did this: 
+1 2 1 5  1 1 
+0 0 0 0  0 0 
+1
+Exception in thread "main" 

@@ -1,0 +1,96 @@
+Range out with the second guess algoritmizied
+should be around 4.40
+Welcome to the MasterMind solver!
+with range
+ Ooopps we got a 7
+
+ The computer did this: 
+1 1 2 3  0 2 
+6 5 3 2  3 0 
+6 2 3 2  2 0 
+6 5 3 1  2 0 
+4 5 3 2  3 0 
+5 5 3 2  3 0 
+3 5 3 2  4 0 
+ Ooopps we got a 7
+
+ The computer did this: 
+1 1 2 3  3 0 
+2 1 2 3  2 0 
+1 1 5 3  3 0 
+1 1 1 3  3 0 
+1 1 6 3  3 0 
+1 1 3 3  3 0 
+1 1 4 3  4 0 
+ Ooopps we got a 7
+
+ The computer did this: 
+1 1 2 3  3 0 
+2 1 2 3  2 0 
+1 1 2 1  2 0 
+1 1 3 3  3 0 
+1 1 5 3  3 0 
+1 1 4 3  3 0 
+1 1 6 3  4 0 
+ Ooopps we got a 7
+
+ The computer did this: 
+1 1 2 3  3 0 
+3 1 2 3  2 0 
+1 1 5 3  2 0 
+1 1 2 2  3 0 
+1 1 2 4  3 0 
+1 1 2 1  3 0 
+1 1 2 6  4 0 
+ Ooopps we got a 7
+
+ The computer did this: 
+1 1 2 3  3 0 
+1 3 2 3  2 0 
+1 1 1 3  2 0 
+1 1 2 6  3 0 
+1 1 2 5  3 0 
+1 1 2 2  3 0 
+1 1 2 4  4 0 
+ Ooopps we got a 7
+
+ The computer did this: 
+1 1 2 3  3 0 
+1 2 2 3  2 0 
+1 1 4 3  3 0 
+1 1 3 3  3 0 
+1 1 5 3  3 0 
+1 1 6 3  3 0 
+1 1 1 3  4 0 
+ Ooopps we got a 7
+
+ The computer did this: 
+1 1 2 3  3 0 
+2 1 2 3  2 0 
+1 1 2 1  2 0 
+1 1 4 3  3 0 
+1 1 3 3  3 0 
+1 1 6 3  3 0 
+1 1 5 3  4 0 
+ Ooopps we got a 7
+
+ The computer did this: 
+1 1 2 3  3 0 
+2 1 2 3  2 0 
+1 1 1 3  3 0 
+1 1 4 3  3 0 
+1 1 5 3  3 0 
+1 1 3 3  3 0 
+1 1 6 3  4 0 
+ We ran 10000 times.
+ The average # of guesses: 4.4127
+1 Guesses: 0
+2 Guesses: 116
+3 Guesses: 897
+4 Guesses: 4157
+5 Guesses: 4412
+6 Guesses: 410
+7 Guesses: 8
+8 Guesses: 0
+Work begun at:      Sun Aug 24 17:06:35 EDT 1997
+We are finished at: Sun Aug 24 22:29:03 EDT 1997

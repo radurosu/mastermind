@@ -1,0 +1,98 @@
+Solver ran 10000 times with second guess made by computer
+using the squared sum (expected value stuff)
+
+
+Welcome to the MasterMind solver!
+ We ran 10000 times.
+ The average # of guesses: 4.4168
+1 Guesses: 1
+2 Guesses: 98
+3 Guesses: 880
+4 Guesses: 4097
+5 Guesses: 4601
+6 Guesses: 323
+7 Guesses: 0
+8 Guesses: 0
+Work begun at:      Fri Aug 08 12:13:00 EDT 1997
+We are finished at: Fri Aug 08 16:30:40 EDT 1997
+
+     ------------
+
+Using the sum of squares (expected) ... and hardcoded second guess.
+
+Welcome to the MasterMind solver!
+ We ran 10000 times.
+ The average # of guesses: 4.3603000000000005
+1 Guesses: 4
+2 Guesses: 57
+3 Guesses: 902
+4 Guesses: 4605
+5 Guesses: 4233
+6 Guesses: 199
+7 Guesses: 0
+8 Guesses: 0
+Work begun at:      Fri Aug 08 12:02:13 EDT 1997
+We are finished at: Fri Aug 08 12:28:44 EDT 1997
+
+   -----------
+
+using expected values
+and the second guess hardcoded.
+done for checking the previous results.
+
+Welcome to the MasterMind solver!
+ We ran 10000 times.
+ The average # of guesses: 4.3723
+1 Guesses: 10
+2 Guesses: 52
+3 Guesses: 910
+4 Guesses: 4498
+5 Guesses: 4293
+6 Guesses: 237
+7 Guesses: 0
+8 Guesses: 0
+Work begun at:      Fri Aug 08 17:09:27 EDT 1997
+We are finished at: Fri Aug 08 17:56:31 EDT 1997
+
+Welcome to the MasterMind solver!
+with expected
+ We ran 10000 times.
+ The average # of guesses: 4.3674
+1 Guesses: 9
+2 Guesses: 67
+3 Guesses: 882
+4 Guesses: 4532
+5 Guesses: 4303
+6 Guesses: 207
+7 Guesses: 0
+8 Guesses: 0
+Work begun at:      Fri Aug 08 18:25:42 EDT 1997
+We are finished at: Fri Aug 08 19:14:14 EDT 1997
+Welcome to the MasterMind solver!
+with expected
+ We ran 10000 times.
+ The average # of guesses: 4.3678
+1 Guesses: 5
+2 Guesses: 68
+3 Guesses: 872
+4 Guesses: 4550
+5 Guesses: 4309
+6 Guesses: 196
+7 Guesses: 0
+8 Guesses: 0
+Work begun at:      Fri Aug 08 19:45:34 EDT 1997
+We are finished at: Fri Aug 08 20:38:29 EDT 1997
+Welcome to the MasterMind solver!
+with expected
+ We ran 100000 times.
+ The average # of guesses: 4.36962
+1 Guesses: 69
+2 Guesses: 644
+3 Guesses: 8913
+4 Guesses: 45079
+5 Guesses: 43220
+6 Guesses: 2075
+7 Guesses: 0
+8 Guesses: 0
+Work begun at:      Sat Aug 09 14:07:30 EDT 1997
+We are finished at: Sat Aug 09 17:24:17 EDT 1997
