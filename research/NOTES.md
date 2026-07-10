@@ -46,6 +46,47 @@ over all codes. Used to gauge how close the heuristic gets to optimal on small
 {c,p} cases. Conclusion of the thesis: the heuristic is "the algorithm of choice" —
 near-optimal results at any (colors, positions) combination.
 
+## 1997 vs 2026 — same algorithm, modern hardware
+
+The thesis published timings ("Table 2: Time in seconds needed to solve 100 codes,"
+colors 1–12 × positions 1–8) measured on a Pentium 100 notebook, 24 MB RAM, Java
+1.1.4 JIT. The engine behind those numbers is `teza/fromnet/mm.java` — a
+backtracking odometer over per-position randomized color permutations with
+two-sided prefix pruning (O(p·c) memory; the code space is never materialized).
+`solver2026/mn.c` (C, single core) and `solver2026/gpu/` (Metal, one game per
+thread) are faithful ports of it, run on an Apple M4 in July 2026.
+
+### Time to solve 100 codes
+
+| Config | Space | 1997 P100 | 2026 M4 CPU (1 core) | 2026 M4 GPU | Speedup |
+|---|---|---|---|---|---|
+| {6,4} | 1,296 | 0.28 s | ~1 ms | 0.06 ms | ~280× / ~4,700× |
+| {8,6} | 262,144 | 6.87 s | 35 ms | 7.2 ms | 196× / 954× |
+| {12,8} | 4.3×10⁸ | 1,192 s | 4.6 s | 1.76 s | 261× / 683× |
+
+### Accuracy cross-check (same algorithm, 29 years apart)
+
+| Config | 1997 avg | 2026 avg | 2026 sample |
+|---|---|---|---|
+| {6,4} | 4.64, max 8 | 4.6546 ± 0.0009, max 8 | 1,000,000 games (GPU) |
+| {12,8} | 9.02 (100 games) | 8.9912 ± 0.011 | 10,000 games (GPU) |
+
+In one million {6,4} games the 1997 worst case of 8 was never exceeded (219
+games hit 8, zero hit 9).
+
+### Beyond the 1997 ceiling (M4 CPU, single core)
+
+The largest published cell was {12,8} = 429,981,696 codes. New territory:
+
+| Config | Space | Avg guesses | Max | Runs | Time |
+|---|---|---|---|---|---|
+| {12,9} | 5.2×10⁹ | 9.89 | 14 | 100 | 30 s |
+| {12,10} | 6.2×10¹⁰ | 10.29 | 13 | 100 | 127 s |
+| {14,10} | 2.9×10¹¹ | 11.20 | 14 | 50 | 214 s |
+
+Guess growth stays near-linear in colors and positions — the thesis curve
+extrapolates cleanly two orders of magnitude past where it was measured.
+
 ## Files recovered (research/original/)
 
 - `index.html`, `intro.htm`, `definitions.htm`, `heuristic.htm`, `deep.htm`,
