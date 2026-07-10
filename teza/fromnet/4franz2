@@ -1,0 +1,30 @@
+Colors:    6 
+Positions: 4
+Runs:      10000
+
+Average: 4.4404
+Std.Dev: 0.009611140483945712
+Maximum: 7
+1 Guesses: 0
+2 Guesses: 255
+3 Guesses: 1364
+4 Guesses: 3310
+5 Guesses: 3914
+6 Guesses: 1107
+7 Guesses: 50
+It took us: 0:23. 
+Colors:    6 
+Positions: 4
+Runs:      10000
+
+Average: 4.4322
+Std.Dev: 0.009008242383677536
+Maximum: 7
+1 Guesses: 19
+2 Guesses: 128
+3 Guesses: 1288
+4 Guesses: 3643
+5 Guesses: 3964
+6 Guesses: 915
+7 Guesses: 43
+It took us: 0:24. 

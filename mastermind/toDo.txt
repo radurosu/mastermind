@@ -1,0 +1,11 @@
+Mastermind to Do list.
+
+try the 1123.
+
+-----END 8/5/97--------
+
+done.
+hardcoding the second guess still gives 8s
+but reduces the average from 
+4.64 to 4.54
+8/6/97

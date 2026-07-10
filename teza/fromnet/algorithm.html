@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Frans van Gool: MasterMind algorithm</title>
+</head>
+<!-- start include from start.html -->
+<body background="../../../../images/cpback.gif" link="#C00000" vlink="#800000" alink="#C00000">
+<table border=0 cellspacing=0>
+<tr><td valign=top align=left>
+<a href="../../../../../www.cp.tn.tudelft.nl/default.htm"><img src="../../../../images/compphys.gif" border=0></a>
+</td><td width=100% rowspan=2 valign=top>
+<!-- end include from start.html -->
+
+
+<h1>MasterMind algorithm</h1>
+
+The algorithm used by my MasterMind applet is very simple. Yet it is also
+very fast and it uses relatively few guesses. The algorithm consists of three
+parts:
+<ul>
+<li>a basic algoritm
+<li>an improvement to increase the speed
+<li>an improvement to reduce the number of guesses
+</ul>
+I will describe the algorithm for the standard MasterMind game with 4 positions
+and 6 colors. However, the same algorithm can be used for any number of
+positions and colors.
+
+<h3>The basic algorithm</h3>
+
+The basic algorithm is just a counter. I see the pins of the Mastermind
+game as digits and the position of the pins determine the position of the
+digit in a number. So in the standard case, I have a counter with four digits
+in the base 6 (i.e. the digits can have the values 0, 1, 2, 3, 4 and 5).
+I start the algorithm with the guess 0000 and record the reply. Then the
+counter is incremented until a value is reached that is possible given the
+previous guesses and replies. This is repeated until the code is found.
+If the counter overflows (i.e. gets at 0000 again), then there is no possible
+code and hence the adversary has made a mistake.
+
+<h3>Improving the speed</h3>
+
+The first improvement on the basic algorithm is to realize that most of the
+time, we can increment the counter with more than 1. As an example, suppose
+the reply to the first guess 0000 was 1 black and 0 white. Then it is easy
+to see that the first possible counter value is 1000. So many iterations
+can be skipped. In general, by comparing the current counter value with a guess
+and its reply, I can determine the highest digit that should at least change
+to get a value consistent with that guess. I do this for all previous guesses
+and get the highest digit that should at least change to get a possible value.
+I increment that digit (and set the lower digits to 0). Then I chack again
+whether this value is possible (and if not, which digit I must increment).
+This improvement GREATLY improves the speed of the algorithm since it skips
+most of the iterations. Furthermore, it gives exactly the same result (i.e. the
+same guesses) as the original algorithm.
+
+<h3>Reducing the number of guesses</h3>
+
+The second improvement on the basic algorithm is not to use the digits as
+direct representations of the colors. Before the start of a game, I generate
+a random color lookup-table for each position. So the same digit can mean
+a different color in each of the positions. This does nothing to improve the
+speed of the algorithm, but it greatly improves the quality (i.e. information
+content) of the first guesses. As a result, the number of guesses is
+significantly reduced. Also, it makes it difficult for the adversary to
+adapt his code to the algorithm.
+
+<h3>Results</h3>
+
+The results of this algorithm are as follows:
+<table>
+<tr><td>1 try  </td><td></td><td align=right> 0.08%</td></tr>
+<tr><td>2 tries</td><td></td><td align=right> 0.94%</td></tr>
+<tr><td>3 tries</td><td></td><td align=right> 7.84%</td></tr>
+<tr><td>4 tries</td><td></td><td align=right>32.83%</td></tr>
+<tr><td>5 tries</td><td></td><td align=right>43.20%</td></tr>
+<tr><td>6 tries</td><td></td><td align=right>13.99%</td></tr>
+<tr><td>7 tries</td><td></td><td align=right> 1.09%</td></tr>
+<tr><td>8 tries</td><td></td><td align=right> 0.03%</td></tr>
+</table>
+The average is 4.65 tries.
+
+<p>
+I do not include speed measurements, because they are to dependent on the
+platform that is used. However, by comparison with other MasterMind algorithms
+I can say that it is very fast.
+
+<h3>Theoretical results and possible improvements</h3>
+
+The theoretical optimum is an avegare of 4.34 tries with a worst case of 6
+tries. However, this optimum sometimes requires guesses that are not possible
+codes according to the previous guesses/replies. Still, these 'impossible' 
+guesses have so much information content that they do reduce the average and 
+maximum number of guesses. This theoretical optimum has bee calculated by 
+searching all possible code/guesses combinations, which is not a feasible 
+approach for a MasterMind playing program.
+
+<p>
+I think the quality (i.e. number of guesses) of the above algorithm could be
+improved by using first guesses that have more information content. It will be
+very difficult though to find a method that works well (and fast) in the 
+general case (i.e. for any number of colors and positions). I don't think the
+speed of the above algorithm can be much improved upon in the general case.
+
+<!-- start include from end.html -->
+</td></tr><tr><td valign=bottom>
+<form action="http://barium.tn.tudelft.nl/cgi-bin/genform" method=post>
+<input type=hidden name=document_uri value="/people/gool/java/mastermind/algorithm.html">
+<input type=image src="../../../../images/pagemast.gif" name=pagemaster border=0>
+</form>
+<font size=1 color=white>Last modified:<br>
+
+08-Oct-97<br>08:50:44 MDT<br></font>
+</td></tr></table>
+</body>
+<!-- end include from end.html -->
+
+</html>

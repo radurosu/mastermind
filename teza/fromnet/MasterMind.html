@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Frans van Gool: MasterMind</title>
+</head>
+<!-- start include from start.html -->
+<body background="../../../../images/cpback.gif" link="#C00000" vlink="#800000" alink="#C00000">
+<table border=0 cellspacing=0>
+<tr><td valign=top align=left>
+<a href="../../../../../www.cp.tn.tudelft.nl/default.htm"><img src="../../../../images/compphys.gif" border=0></a>
+</td><td width=100% rowspan=2 valign=top>
+<!-- end include from start.html -->
+
+
+
+<applet code=mastermind.class width=205 height=348 align=right></applet>
+
+<h4>General usage</h4>
+
+The applet has two alternating playing modes.
+It starts by trying to guess your code.
+Then it lets you guess a code and after that the cycle starts again.
+Switching to the next mode happens after pushing the <B>New game</B> button,
+which appears after the current mode has finished.
+
+<h4>When the applet tries to guess your code</h4>
+
+When the applet tries to guess your code, you should enter the number of
+black and white result pegs in the box right of the applets guess and then
+press the <B>Enter result</B> button. Entering result pegs can be done by
+clicking on the hole where you want to place the peg. Clicking cycles through
+the possibilities: white peg, black peg, no peg. The position of the result
+pegs is not important.
+
+<h4>When you try to guess the applets code</h4>
+
+When you try to guess the applets code, you should enter your guess in the
+(lowest available) left box and then press the <B>Enter guess</B> button.
+Entering a guess can be done by dragging a colored peg to the desired hole.
+Pegs can be dragged from either the peg store at the right or from already
+placed pegs on the left.
+<p>
+To save a few people some frustration, the applet shows its code in the
+Java console after the round has finished. It shows the code as numbers
+which give the order in the peg store (i.e. 0=blue, 1=green, etc.).
+
+<h4>Rules of the game</h4>
+
+MasterMind is a game played by two persons. The object of the game is to
+guess the opponents code. A code is a row of five colored pegs, each of
+which can have any of nine colors. The game proceeds as follows:
+<ol>
+<li>Person A picks a code (the code to be guessed).
+<li>Person B places a code (the guess) in the first (lowest) free box on the
+left of the playing board.
+<li>Person A compares the two codes and places result pegs in the box right
+of the guess:
+<ul>
+<li>One black peg for each color of the guess that appears in the same
+position in the code to be guessed.
+<li>One white peg for each color of the guess that appears in the code to
+be guessed but is not in the correct position.
+</ul>
+<li>If the code is not guessed and there are still free boxes on the left,
+then go back to step 2, otherwise this game has finished and person A and B
+should switch sides and start another game.
+</ol>
+
+<h4>Problem solving</h4>
+
+When the applet is guessing your code, it can come to the conclusion there is
+no code possible that agrees with the result of the previous guesses. If so,
+it will print a message in the Java console and in the status bar of your
+browser and start a new game.
+<P>
+
+Note that this applet uses a several (about 30) different colors with some
+subtle shades. When you use a screen that allows only 256 simultaneous colors,
+not all of these colors might be presented correctly.
+In general it is still possible to use the applet on such systems (i.e. the
+different peg colors are still recognizable), but the applet will not look
+as good as it should. If your system allows more (e.g. 65536) simultaneous
+colors, you should see the applet as intended.
+<P>
+
+The source of this applet consists of three classes:
+<ul>
+<li><a href="mastermind.java">mastermind.java</a> is the applet class and
+handles all I/O.
+<li><a href="mm.java">mm.java</a> contains the logic of the MasterMind game.
+<li><a href="mm_result.java">mm_result.java</a> is just a small utility class.
+</ul>
+I also have a <a href=algorithm.html>description of the algorithm</a> used
+by the applet.
+<p>
+
+If you should encounter any problems using this applet or have any questions
+or remarks, please contact
+<a href="mailto:F.A.van.Gool@tn.tudelft.nl">Frans van Gool</a>.
+
+<!-- start include from end.html -->
+</td></tr><tr><td valign=bottom>
+<form action="http://barium.tn.tudelft.nl/cgi-bin/genform" method=post>
+<input type=hidden name=document_uri value="/people/gool/java/mastermind/MasterMind.html">
+<input type=image src="../../../../images/pagemast.gif" name=pagemaster border=0>
+</form>
+<font size=1 color=white>Last modified:<br>
+
+08-Oct-97<br>08:41:38 MDT<br></font>
+</td></tr></table>
+</body>
+<!-- end include from end.html -->
+
+</html>

@@ -1,0 +1,254 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Radu Rosu">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Undergraduate Honors Thesis by Radu T. Rosu - Heuristic algoritm</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER><A NAME="heuristic_top"></A><FONT SIZE=+2>The heuristic algorithm</FONT></CENTER>
+
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; In playing mastermind, one tries to make the
+most of previous information and to use the information to narrow the possibilities
+in order to solve the code in as few steps as possible.&nbsp;&nbsp; One
+way to do this is to always put guesses on the board that would make answers
+to previous guesses valid; e.g. if a guess receives no black or white pegs,
+we know that the code does not have any of the colors in the guess and
+therefore, using these colors in future guesses would be ineffective.
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; With each guess that does not contradict previous
+ones, we at least have a minimal chance of guessing correctly and at the
+same time, we may get additional information.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; The procedure just described&nbsp; is easily
+coded and follows the following structure:
+<UL>&nbsp;&nbsp;&nbsp;&nbsp; <I>1.</I>&nbsp; For the first guess, randomly
+chose a code&nbsp; and submit it to be evaluated.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; <I>2.</I>&nbsp; While the code is not broken
+(number of blacks received equals the number of positions),
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <I>a.</I> pick
+a random combination
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <I>b.</I> consider
+this combination as the actual code and test all previous guesses against
+it;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+test if&nbsp; the same results come up.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <I>c.</I> if
+<I>2b </I>returned true,&nbsp; submit this combination
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+or else, go back to step <I>2a</I>.</UL>
+&nbsp;&nbsp;&nbsp;&nbsp; Below are some samples of using this algorithm
+to solve the 6 color, 4 positions code: 1 3 5 4 - the first guess is a
+random selection of two pairs.
+<UL>
+<UL>&nbsp;&nbsp;&nbsp;&nbsp; Run 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Run 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Run 3
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+B W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+B W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+B W</FONT>
+<BR><FONT SIZE=-1>Guess#:1::5 5 1 1&nbsp;&nbsp;&nbsp; 0&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Guess#:1::3 3 1 1&nbsp;&nbsp; 1&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Guess#:1::6 6 2 2&nbsp;&nbsp;&nbsp; 0&nbsp; 0</FONT>
+<BR><FONT SIZE=-1>Guess#:2::3 3 5 5&nbsp;&nbsp;&nbsp; 2&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Guess#:2::3 1 4 5&nbsp;&nbsp; 0&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Guess#:2::5 3 3 3&nbsp;&nbsp;&nbsp; 1&nbsp; 1</FONT>
+<BR><FONT SIZE=-1>Guess#:3::2 2 5 5&nbsp;&nbsp;&nbsp; 1&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Guess#:3::1 3 5 4&nbsp;&nbsp; 4&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Guess#:3::3 3 1 4&nbsp;&nbsp;&nbsp; 2&nbsp; 1</FONT>
+<BR><FONT SIZE=-1>Guess#:4::1 3 4 5&nbsp;&nbsp;&nbsp; 2&nbsp; 2</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT SIZE=-1>Guess#:4::1 3 5 4&nbsp;&nbsp;&nbsp; 4&nbsp; 0</FONT>
+<BR><FONT SIZE=-1>Guess#:5::3 1 4 5&nbsp;&nbsp;&nbsp; 0&nbsp; 4</FONT>
+<BR><FONT SIZE=-1>Guess#:6::1 3 5 4&nbsp;&nbsp;&nbsp; 4&nbsp; 0</FONT></UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp; In previous research this algorithm gave surprisingly
+good results.&nbsp; It averaged 4.64 guesses for each {<I>6,4</I>} code
+solved, and in addition, it had a very good worst-case performance of&nbsp;
+8 guesses per code.
+<BR>&nbsp;
+
+<P>Performance of the heuristic algorithm
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; As stated in the introduction our purpose was
+to study the performance of this algorithm in games with more colors and
+more positions.&nbsp; We performed this task for as wide a range of codes
+as the hardware available allowed (see <A HREF="technical.htm">technical
+notes</A>).&nbsp; The code sets tested ranged from 2 to 12 colors and 1
+to 8 positions. This meant that our code spaces ranged from 2 ({<I>2,1</I>})&nbsp;
+to 429,981,696 ({<I>12,8</I>})&nbsp; possible codes.&nbsp; A table with
+the results is shown below.
+<UL>
+<UL><FONT SIZE=-1>Table 1:&nbsp; Average number of guesses per game. Colors
+range from 1-12, positions from 1-10 where possible.</FONT>
+
+<P><FONT SIZE=-1>&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+12</FONT>
+<BR><FONT SIZE=-1>p</FONT>
+<BR><FONT SIZE=-1>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1.50&nbsp;&nbsp;&nbsp;&nbsp; 2.13&nbsp;&nbsp;&nbsp;&nbsp; 2.50&nbsp;&nbsp;&nbsp;&nbsp;
+3.02&nbsp;&nbsp;&nbsp; 3.53&nbsp;&nbsp;&nbsp;&nbsp; 3.92&nbsp;&nbsp;&nbsp;&nbsp;
+4.63&nbsp;&nbsp;&nbsp;&nbsp; 4.85&nbsp;&nbsp;&nbsp;&nbsp; 5.38&nbsp;&nbsp;&nbsp;&nbsp;
+5.87&nbsp;&nbsp;&nbsp;&nbsp; 6.56</FONT>
+<BR><FONT SIZE=-1>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.04&nbsp;&nbsp;&nbsp;&nbsp; 2.49&nbsp;&nbsp;&nbsp;&nbsp; 2.97&nbsp;&nbsp;&nbsp;&nbsp;
+3.41&nbsp;&nbsp;&nbsp; 3.89&nbsp;&nbsp;&nbsp;&nbsp; 4.38&nbsp;&nbsp;&nbsp;&nbsp;
+4.82&nbsp;&nbsp;&nbsp;&nbsp; 5.28&nbsp;&nbsp;&nbsp;&nbsp; 5.78&nbsp;&nbsp;&nbsp;&nbsp;
+6.33&nbsp;&nbsp;&nbsp;&nbsp; 6.69</FONT>
+<BR><FONT SIZE=-1>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.40&nbsp;&nbsp;&nbsp;&nbsp; 2.84&nbsp;&nbsp;&nbsp;&nbsp; 3.36&nbsp;&nbsp;&nbsp;&nbsp;
+3.84&nbsp;&nbsp;&nbsp; 4.25&nbsp;&nbsp;&nbsp;&nbsp; 4.66&nbsp;&nbsp;&nbsp;&nbsp;
+5.08&nbsp;&nbsp;&nbsp;&nbsp; 5.43&nbsp;&nbsp;&nbsp;&nbsp; 5.90&nbsp;&nbsp;&nbsp;&nbsp;
+6.45&nbsp;&nbsp;&nbsp;&nbsp; 6.75</FONT>
+<BR><FONT SIZE=-1>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.82&nbsp;&nbsp;&nbsp;&nbsp; 3.21&nbsp;&nbsp;&nbsp;&nbsp; 3.72&nbsp;&nbsp;&nbsp;&nbsp;
+4.24&nbsp;&nbsp;&nbsp; 4.66&nbsp;&nbsp;&nbsp;&nbsp; 5.06&nbsp;&nbsp;&nbsp;&nbsp;
+5.44&nbsp;&nbsp;&nbsp;&nbsp; 5.77&nbsp;&nbsp;&nbsp;&nbsp; 6.16&nbsp;&nbsp;&nbsp;&nbsp;
+6.55&nbsp;&nbsp;&nbsp;&nbsp; 6.94</FONT>
+<BR><FONT SIZE=-1>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3.25&nbsp;&nbsp;&nbsp;&nbsp; 3.50&nbsp;&nbsp;&nbsp;&nbsp; 4.08&nbsp;&nbsp;&nbsp;&nbsp;
+4.63&nbsp;&nbsp;&nbsp; 5.08&nbsp;&nbsp;&nbsp;&nbsp; 5.49&nbsp;&nbsp;&nbsp;&nbsp;
+5.88&nbsp;&nbsp;&nbsp;&nbsp; 6.22&nbsp;&nbsp;&nbsp;&nbsp; 6.62&nbsp;&nbsp;&nbsp;&nbsp;
+6.95&nbsp;&nbsp;&nbsp;&nbsp; 7.31</FONT>
+<BR><FONT SIZE=-1>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3.66&nbsp;&nbsp;&nbsp;&nbsp; 3.85&nbsp;&nbsp;&nbsp;&nbsp; 4.38&nbsp;&nbsp;&nbsp;&nbsp;
+5.03&nbsp;&nbsp;&nbsp; 5.50&nbsp;&nbsp;&nbsp;&nbsp; 5.97&nbsp;&nbsp;&nbsp;&nbsp;
+6.36&nbsp;&nbsp;&nbsp;&nbsp; 6.73&nbsp;&nbsp;&nbsp;&nbsp; 7.12&nbsp;&nbsp;&nbsp;&nbsp;
+7.33&nbsp;&nbsp;&nbsp;&nbsp; 7.87</FONT>
+<BR><FONT SIZE=-1>7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4.06&nbsp;&nbsp;&nbsp;&nbsp; 4.33&nbsp;&nbsp;&nbsp;&nbsp; 4.79&nbsp;&nbsp;&nbsp;&nbsp;
+5.43&nbsp;&nbsp;&nbsp; 5.97&nbsp;&nbsp;&nbsp;&nbsp; 6.46&nbsp;&nbsp;&nbsp;&nbsp;
+6.88&nbsp;&nbsp;&nbsp;&nbsp; 7.26&nbsp;&nbsp;&nbsp;&nbsp; 7.62&nbsp;&nbsp;&nbsp;&nbsp;
+7.96&nbsp;&nbsp;&nbsp;&nbsp; 8.23</FONT>
+<BR><FONT SIZE=-1>8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4.46&nbsp;&nbsp;&nbsp;&nbsp; 4.75&nbsp;&nbsp;&nbsp;&nbsp; 5.15&nbsp;&nbsp;&nbsp;&nbsp;
+5.84&nbsp;&nbsp;&nbsp; 6.49&nbsp;&nbsp;&nbsp;&nbsp; 6.95&nbsp;&nbsp;&nbsp;&nbsp;
+7.39&nbsp;&nbsp;&nbsp;&nbsp; 8.04&nbsp;&nbsp;&nbsp;&nbsp; 8.36&nbsp;&nbsp;&nbsp;&nbsp;
+8.48&nbsp;&nbsp;&nbsp;&nbsp; 8.97</FONT>
+<BR><FONT SIZE=-1>9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5.03&nbsp;&nbsp;&nbsp;&nbsp; 5.13&nbsp;&nbsp;&nbsp;&nbsp; 5.98&nbsp;&nbsp;&nbsp;&nbsp;
+6.25&nbsp;&nbsp;&nbsp; 7.23&nbsp;&nbsp;&nbsp;&nbsp; 7.75&nbsp;&nbsp;&nbsp;&nbsp;
+8.13&nbsp;&nbsp;&nbsp;&nbsp; 8.56&nbsp;&nbsp;&nbsp;&nbsp; 9.14&nbsp;&nbsp;&nbsp;&nbsp;
+9.19</FONT>
+<BR><FONT SIZE=-1>10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5.49&nbsp;&nbsp;&nbsp;&nbsp; 5.50&nbsp;&nbsp;&nbsp;&nbsp; 6.42&nbsp;&nbsp;&nbsp;&nbsp;
+6.76&nbsp;&nbsp;&nbsp; 7.84&nbsp;&nbsp;&nbsp;&nbsp; 8.28&nbsp;&nbsp;&nbsp;&nbsp;
+8.72&nbsp;&nbsp;&nbsp;&nbsp; 9.36&nbsp;&nbsp;&nbsp;&nbsp; 9.74</FONT></UL>
+</UL>
+&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; The table shows results that are just as surprising
+as the results from the original research of the {6,4} case.&nbsp; The
+algorithm performs just as well in higher dimensional spaces as in the
+smaller ones.&nbsp; In fact, if we look at the graphical representation
+of the results (Figure 1) we see a simple linear evolution of the results.&nbsp;
+The graph looks like a slightly crumpled piece of paper floating in space,
+the slight crumples coming from the natural statistical variation of the
+averages. This variation was at most 0.01.
+<BR>&nbsp;
+<BR>&nbsp;
+<CENTER><TABLE COLS=1 WIDTH="50%" >
+<TR>
+<TD WIDTH="100%">
+<CENTER><IMG SRC="Fig1.gif" ALT="Figure 1- Graph of guesses per code solved using heuristic algoritm" HEIGHT=292 WIDTH=344>&nbsp;</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Figure 1 - Guesses
+per code solved using heuristic algorithm.</FONT></FONT></TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; In contrast to the logical results of the
+heuristic algorithm, its time performance has exponential properties. This
+is due to the exponential nature of the problem at hand. As mentioned previously,
+the size of the code set is given by the formula colors<SUP>positions</SUP>.&nbsp;
+Therefore in the 12 color case, an increase of one position increased the
+code space by 12x. This property quickly depleted our <A HREF="technical.htm">computational
+resources</A>.&nbsp; Below is a table of times, and following it is a graphical
+representation of the performance data (Figure 2).&nbsp; In addition we
+give a second interpretation of the results, graphing the time versus the
+code set size (Figure 3).
+<UL>
+<UL><FONT SIZE=-1>Table 2: Time in seconds needed to solve 100 codes.</FONT>
+<BR><FONT SIZE=-1>&nbsp; c&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12</FONT>
+<BR><FONT SIZE=-1>p</FONT>
+<BR><FONT SIZE=-1>1&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0.10&nbsp;&nbsp;&nbsp;&nbsp;
+0.12&nbsp;&nbsp;&nbsp;&nbsp; 0.11&nbsp;&nbsp;&nbsp;&nbsp; 0.12&nbsp;&nbsp;&nbsp;&nbsp;
+0.12&nbsp;&nbsp;&nbsp;&nbsp; 0.12&nbsp;&nbsp;&nbsp;&nbsp; 0.15&nbsp;&nbsp;&nbsp;&nbsp;
+0.16&nbsp;&nbsp;&nbsp; 0.11&nbsp;&nbsp;&nbsp;&nbsp; 0.11&nbsp;&nbsp;&nbsp;&nbsp;
+0.11</FONT>
+<BR><FONT SIZE=-1>2&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0.10&nbsp;&nbsp;&nbsp;&nbsp;
+0.12&nbsp;&nbsp;&nbsp;&nbsp; 0.12&nbsp;&nbsp;&nbsp;&nbsp; 0.13&nbsp;&nbsp;&nbsp;&nbsp;
+0.13&nbsp;&nbsp;&nbsp;&nbsp; 0.14&nbsp;&nbsp;&nbsp;&nbsp; 0.16&nbsp;&nbsp;&nbsp;&nbsp;
+0.17&nbsp;&nbsp;&nbsp; 0.16&nbsp;&nbsp;&nbsp;&nbsp; 0.17&nbsp;&nbsp;&nbsp;&nbsp;
+0.22</FONT>
+<BR><FONT SIZE=-1>3&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0.11&nbsp;&nbsp;&nbsp;&nbsp;
+0.13&nbsp;&nbsp;&nbsp;&nbsp; 0.14&nbsp;&nbsp;&nbsp;&nbsp; 0.15&nbsp;&nbsp;&nbsp;&nbsp;
+0.17&nbsp;&nbsp;&nbsp;&nbsp; 0.19&nbsp;&nbsp;&nbsp;&nbsp; 0.22&nbsp;&nbsp;&nbsp;&nbsp;
+0.22&nbsp;&nbsp;&nbsp; 0.33&nbsp;&nbsp;&nbsp;&nbsp; 0.38&nbsp;&nbsp;&nbsp;&nbsp;
+0.38</FONT>
+<BR><FONT SIZE=-1>4&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0.12&nbsp;&nbsp;&nbsp;&nbsp;
+0.14&nbsp;&nbsp;&nbsp;&nbsp; 0.17&nbsp;&nbsp;&nbsp;&nbsp; 0.22&nbsp;&nbsp;&nbsp;&nbsp;
+0.28&nbsp;&nbsp;&nbsp;&nbsp; 0.44&nbsp;&nbsp;&nbsp;&nbsp; 0.49&nbsp;&nbsp;&nbsp;&nbsp;
+0.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.88&nbsp;&nbsp;&nbsp;&nbsp; 1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1.4</FONT>
+<BR><FONT SIZE=-1>5&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0.14&nbsp;&nbsp;&nbsp;&nbsp;
+0.18&nbsp;&nbsp;&nbsp;&nbsp; 0.27&nbsp;&nbsp;&nbsp;&nbsp; 0.43&nbsp;&nbsp;&nbsp;&nbsp;
+0.67&nbsp;&nbsp;&nbsp;&nbsp; 1.15&nbsp;&nbsp;&nbsp;&nbsp; 1.65&nbsp;&nbsp;&nbsp;&nbsp;
+2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.1</FONT>
+<BR><FONT SIZE=-1>6&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0.16&nbsp;&nbsp;&nbsp;&nbsp;
+0.27&nbsp;&nbsp;&nbsp;&nbsp; 0.57&nbsp;&nbsp;&nbsp;&nbsp; 1.13&nbsp;&nbsp;&nbsp;&nbsp;
+2.21&nbsp;&nbsp;&nbsp;&nbsp; 4.30&nbsp;&nbsp;&nbsp;&nbsp; 6.87&nbsp;&nbsp;&nbsp;&nbsp;
+11.9&nbsp;&nbsp;&nbsp; 13.7&nbsp;&nbsp;&nbsp;&nbsp; 31.2&nbsp;&nbsp;&nbsp;&nbsp;
+28.6</FONT>
+<BR><FONT SIZE=-1>7&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0.19&nbsp;&nbsp;&nbsp;&nbsp;
+0.48&nbsp;&nbsp;&nbsp;&nbsp; 1.37&nbsp;&nbsp;&nbsp;&nbsp; 3.36&nbsp;&nbsp;&nbsp;&nbsp;
+7.56&nbsp;&nbsp;&nbsp;&nbsp; 16.7&nbsp;&nbsp;&nbsp;&nbsp; 28.9&nbsp;&nbsp;&nbsp;&nbsp;
+49.3&nbsp;&nbsp;&nbsp; 82.2&nbsp;&nbsp;&nbsp;&nbsp; 124.6&nbsp;&nbsp; 180</FONT>
+<BR><FONT SIZE=-1>8&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0.25&nbsp;&nbsp;&nbsp;&nbsp;
+0.96&nbsp;&nbsp;&nbsp;&nbsp; 3.58&nbsp;&nbsp;&nbsp;&nbsp; 10.49&nbsp;&nbsp;
+25.77&nbsp;&nbsp;&nbsp; 70.25&nbsp;&nbsp; 121.2&nbsp;&nbsp; 178&nbsp;&nbsp;&nbsp;&nbsp;
+437.6&nbsp;&nbsp;&nbsp; 673&nbsp;&nbsp;&nbsp;&nbsp; 1192</FONT></UL>
+</UL>
+&nbsp;
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; Figure 2, and 3 display the same results in
+graphical form.&nbsp; Figure 2 displays the time taken on the z axis with
+Colors and Positions on the x and y axis, respectively.&nbsp; Figure 3
+displays the time taken in respect to the code set size.
+<BR>&nbsp;
+<BR><FONT SIZE=-1>Note: Click on images for a blown-up view.</FONT>
+<TABLE COLS=2 WIDTH="100%" >
+<TR>
+<TD><A HREF="../../c_257C/teza/docs/Fig2.htm"><IMG SRC="Fig2s.gif" HEIGHT=228 WIDTH=324></A></TD>
+
+<TD><A HREF="../../c_257C/teza/docs/Fig3.htm"><IMG SRC="Fig3s.gif" HEIGHT=207 WIDTH=288></A></TD>
+</TR>
+
+<TR>
+<TD>Figure 2 - Heuristic algorithm - seconds per code solved&nbsp;</TD>
+
+<TD>Figure 3 - Heuristic algorithm - Runtime / code set size</TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR>&nbsp;
+
+<P>&nbsp; <A HREF="#heuristic_top">Top</A> Back&nbsp; - <A HREF="intro.htm">Introduction</A>&nbsp;
+<A HREF="definitions.htm">Definitions</A> Forward - <A HREF="deep.htm">The
+deep search algorithm</A> Forward - <A HREF="conclusion.htm">Conclusion</A>
+</BODY>
+</HTML>

@@ -1,0 +1,8 @@
+# Symantec IDDE generated .dpd file. V: 7200
+depthsearch.class: \
+	depthsearch.java 
+mmcode.class: \
+	mmcode.java \
+	mmResult.java 
+mmresult.class: \
+	mmresult.java 

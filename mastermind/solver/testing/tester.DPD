@@ -1,0 +1,7 @@
+# Symantec IDDE generated .dpd file. V: 7200
+mmstester.class: \
+	mmstester.java 
+randomintgenerator.class: \
+	randomintgenerator.java 
+mmstester2.class: \
+	mmstester2.java 

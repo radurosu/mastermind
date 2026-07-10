@@ -1,0 +1,232 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Radu Rosu">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Undergraduate honors thesis by Radu Rosu - Deep searh algorithm</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER><A NAME="deep_top"></A><FONT SIZE=+2>The deep search algorithm</FONT></CENTER>
+&nbsp;
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; In order to gauge&nbsp; the performance of&nbsp;
+the heuristic algorithm,&nbsp; an algorithm that deduced the best possible
+average performance had to be developed.&nbsp; This entails finding a strategy
+'s' such that when all codes are deduced using 's', the sum of guesses
+made is minimized.&nbsp; In order to develop such a strategy, a deep search
+procedure has to be applied to each code set, that is: an algorithm that
+searches all the possible paths and finds the shortest one.&nbsp; As for
+Mastermind, this entails trying all possible codes as the first guess,
+and then choosing the one that leads to guessing the rest of the codes
+the quickest. To better understand what this involves, a detailed study
+of the 4 color and 3 positions game is given in Figure 4.&nbsp; For this
+example we have chosen 112 as the initial code.
+<UL>
+<UL>
+<CENTER><FONT SIZE=-1>Figure -4 - Detailed description of the {4,3} case.</FONT></CENTER>
+
+<UL>&nbsp;
+<BR>For demostration purposes we start with 112 as the initial code.
+<BR><FONT SIZE=-1>Colors: 4; Positions: 3; Guess path: 112</FONT>
+<BR><FONT SIZE=-1>Results: (Blacks, Whites)</FONT>
+<BR>&nbsp;</UL>
+<FONT SIZE=-1>(0,0)&nbsp;&nbsp;&nbsp;&nbsp; (0,1)&nbsp;&nbsp;&nbsp;&nbsp;
+(0,2)&nbsp;&nbsp;&nbsp;&nbsp; (0,3)&nbsp;&nbsp;&nbsp;&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp;
+(1,1)&nbsp;&nbsp;&nbsp;&nbsp; (1,2)&nbsp;&nbsp;&nbsp;&nbsp; (2,0)&nbsp;&nbsp;&nbsp;&nbsp;
+(3,0)</FONT>
+<BR><FONT SIZE=-1>333&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 233&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+221&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+133&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 131&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+121&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+112</FONT>
+<BR><FONT SIZE=-1>334&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 244&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+231&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+144&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+211&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 113</FONT>
+<BR><FONT SIZE=-1>344&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 223&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+241&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+134&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 311&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+114</FONT>
+<BR><FONT SIZE=-1>343&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 224&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+321&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+143&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 411&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+122</FONT>
+<BR><FONT SIZE=-1>433&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 234&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+421&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+313&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 123&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+132</FONT>
+<BR><FONT SIZE=-1>434&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 243&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+414&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 124&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+142</FONT>
+<BR><FONT SIZE=-1>444&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 323&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+314&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 213&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+212</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+324&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+413&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 214&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+312</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+423&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+332&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+412</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+424&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+442</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+331&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+342</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+441&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+432</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+341&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+232</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+431&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+242</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+222</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+322</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+422</FONT>
+
+<P><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; We continue searching on the
+set of codes that gave the (2,0) result and display several of the 9 guesses
+that could be made (on the left we have the guess, and in the table we
+have the corresponding answer -- whet it is compared to the rest).</FONT>
+<BR>&nbsp;
+<UL><FONT SIZE=-1>Colors: 4;&nbsp;&nbsp;&nbsp;&nbsp; Positions: 3;&nbsp;&nbsp;&nbsp;
+Guess path: 112 (2,0)</FONT></UL>
+<FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+113&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 114&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+122&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 132&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+142&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 212&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+312&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 412</FONT>
+<BR><FONT SIZE=-1>111&nbsp; (3,0)&nbsp;&nbsp;&nbsp;&nbsp; (2,0)&nbsp;&nbsp;&nbsp;&nbsp;
+(2,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp;
+(1,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp;
+(1,0)</FONT>
+<BR><FONT SIZE=-1>113&nbsp; (2,0)&nbsp;&nbsp;&nbsp;&nbsp; (3,0)&nbsp;&nbsp;&nbsp;&nbsp;
+(2,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,1)&nbsp;&nbsp;&nbsp;&nbsp;
+(1,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,1)&nbsp;&nbsp;&nbsp;&nbsp;
+(1,0)</FONT>
+<BR><FONT SIZE=-1>132&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,1)&nbsp;&nbsp;&nbsp;&nbsp;
+(1,0)&nbsp;&nbsp;&nbsp;&nbsp; (2,0)&nbsp;&nbsp;&nbsp;&nbsp; (3,0)&nbsp;&nbsp;&nbsp;&nbsp;
+(2,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,1)&nbsp;&nbsp;&nbsp;&nbsp; (0,3)&nbsp;&nbsp;&nbsp;&nbsp;
+(1,1)</FONT>
+
+<P><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; Looking at the results in the
+table we see that the guess of 111 splits the set of 9 into sets of 1,2,6
+elements. 113 splits the set into sets of 1,2,2,4 members. 132 splits the
+set into sets of 1,1,2,2,3.</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; Now, in each case one of the
+sets created contains of the guess itself,&nbsp; which we can ignore. If
+there are other sets of 1 element, we know that we need an additional guess
+to get it. If there are 2 elements in the set, we know that we need 3 additional
+guesses - one for the first element, and two for the second. If we have
+more than two, we must do a deep search on the set.</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; In our cases this leads to the
+following sums of guesses</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; 111: 1 (the guess itself) +
+5(3 from the set {113,114} plus one for each element of the set in order
+to take into account the 111 guess) + 21 (from an other deep search done
+on the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {122,132,142,212,312,412} set)&nbsp;
+= 27.</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; 113: 1+5+5+11 = 22</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; 132: 1+2+5+5+8 = 21</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; From this we see that the 132
+guess is best when we receive an answer of&nbsp; (2,0) to the guess of
+112.</FONT>
+<BR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; The same procedure is applied
+to the different sets created by the different answers.</FONT>
+
+<P><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp; In the case of {4,3} the code
+set is of size 64, and this algorithm leads to a minimum number of guesses,
+206. This gives an optimum average of 206/64 = 3.21.</FONT></UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp; Unfortunately, the deep search algorithm has only
+a very poor time performance. In fact, the above results of&nbsp; the {4,3}
+case was achieved only after the following optimization were implemented.
+
+<P><FONT SIZE=+1>Optimization of the deep search algorithm</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; After beginning to run the above algorithm
+on the {4,3} case it became clear that doing a pure depth search (i.e.
+searching every possible path) was an unfeasible task with any larger case.
+Below, we outline some of the optimizations made.
+<BR>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; The first optimization made concerned the
+top level of the search tree. It was clear that several first guesses led
+to equal results and therefore, testing each one was wasteful.&nbsp; With
+any color - position combination one can come up with the minimum set of
+codes that have the essential characteristics of all the others.&nbsp;
+In the 4x3 case these are 111, 112, 123. All other codes are just permutations
+of these three.&nbsp; By permutations we mean a switch of color and/or
+position. Therefore, by reducing the first level search space from 64 to
+3, we improved our performance drastically.&nbsp; This however was not
+enough. While reducing the number of&nbsp; guesses, the computer had to
+try from the topmost level down, and&nbsp; it did not allow us to follow
+the same procedure for lower levels.&nbsp; At lower levels one cannot assume
+that all codes of a certain structure (ones that can be converted into
+others by a set of permutations)&nbsp; achieve the same minimum of guesses
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; The second optimization we made involved stopping
+a search on a branch as soon as the optimum was found. For example: in
+the 4x3 case outlined in Figure 1, we can follow the path: 112->(2,0)->132->(1,1).&nbsp;
+This leaves us with three remaining possibilities, namely 212, 113, 412.
+<BR>If we now try 212 we distinguish the rest as shown below.
+<BR>&nbsp;<FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 212&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+113&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 412</FONT>
+<BR><FONT SIZE=-1>212&nbsp; (3,0)&nbsp;&nbsp;&nbsp;&nbsp; (1,0)&nbsp;&nbsp;&nbsp;&nbsp;
+(2,0)</FONT>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; The fact that each answer we received appears
+only once ensures that this guess (212) gives the shortest path.&nbsp;
+We do not need to consider the other two (113 and 412).&nbsp; We have already
+discovered the optimum path at this point and can disregard the rest.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; This optimization significantly reduces the
+number of times that the deep search function is called.
+<BR>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; The optimization allowed us to do deep searches
+for standard cases up to {6,4}, for which the algorithm took approximately
+15 hours.&nbsp; Below is a table of the achieved results.
+<BR>&nbsp;
+<UL>
+<UL><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6</FONT>
+<BR><FONT SIZE=-1>p</FONT>
+<BR><FONT SIZE=-1>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1.50&nbsp;&nbsp;&nbsp;&nbsp; 2.00&nbsp;&nbsp;&nbsp;&nbsp; 2.50&nbsp;&nbsp;&nbsp;&nbsp;
+3.00&nbsp;&nbsp;&nbsp; 3.50</FONT>
+<BR><FONT SIZE=-1>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.00&nbsp;&nbsp;&nbsp;&nbsp; 2.33&nbsp;&nbsp;&nbsp;&nbsp; 2.80&nbsp;&nbsp;&nbsp;&nbsp;
+3.24&nbsp;&nbsp;&nbsp; 3.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<BR><FONT SIZE=-1>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.25&nbsp;&nbsp;&nbsp;&nbsp; 2.70&nbsp;&nbsp;&nbsp;&nbsp; 3.21&nbsp;&nbsp;&nbsp;&nbsp;
+3.64&nbsp;&nbsp;&nbsp; 4.25</FONT>
+<BR><FONT SIZE=-1>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.75&nbsp;&nbsp;&nbsp;&nbsp; 3.02&nbsp;&nbsp;&nbsp;&nbsp; 3.54&nbsp;&nbsp;&nbsp;&nbsp;
+3.96&nbsp;&nbsp;&nbsp; 4.34</FONT></UL>
+</UL>
+&nbsp;&nbsp;&nbsp; A Big O analysis of the deep search algorithm gave a
+Big O of <FONT FACE="Courier New,Courier">c<SUP>2p</SUP>p<SUP>4</SUP></FONT>.&nbsp;
+As it becomes obvious that going further using the present algorithm is
+unrealistic, we are looking into calculating a theoretical minimum.&nbsp;
+This can be done by calculating the size of the sets corresponding to each
+answer instead of its elements.&nbsp; Already the exit conditions of the
+algorithm are based on size so just calculating the lengths from the beginning
+would not degrade the accuracy of our results. This work is still in progress.
+<BR>&nbsp;
+<CENTER><A HREF="#deep_top">Top</A></CENTER>
+
+<CENTER>Back - <A HREF="intro.htm">Introduction</A>&nbsp;&nbsp; <A HREF="definitions.htm">Definitions</A>&nbsp;
+<A HREF="heuristic.htm#heuristic_top">The heuristic algorithm</A></CENTER>
+
+<CENTER>Forward - <A HREF="conlusion.htm">Conclusion</A></CENTER>
+&nbsp;
+</BODY>
+</HTML>

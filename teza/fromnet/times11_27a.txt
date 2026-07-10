@@ -1,0 +1,303 @@
+Colors:    2 
+Positions: 1
+Runs:      1000
+
+Time: 1370
+
+Colors:    2 
+Positions: 2
+Runs:      1000
+
+Time: 1040
+
+Colors:    2 
+Positions: 3
+Runs:      1000
+
+Time: 1100
+
+Colors:    2 
+Positions: 4
+Runs:      1000
+
+Time: 1210
+
+Colors:    2 
+Positions: 5
+Runs:      1000
+
+Time: 1430
+
+Colors:    2 
+Positions: 6
+Runs:      1000
+
+Time: 1650
+
+Colors:    2 
+Positions: 7
+Runs:      1000
+
+Time: 1920
+
+Colors:    2 
+Positions: 8
+Runs:      1000
+
+Time: 2520
+
+Colors:    3 
+Positions: 1
+Runs:      1000
+
+Time: 1160
+
+Colors:    3 
+Positions: 2
+Runs:      1000
+
+Time: 1150
+
+Colors:    3 
+Positions: 3
+Runs:      1000
+
+Time: 1270
+
+Colors:    3 
+Positions: 4
+Runs:      1000
+
+Time: 1420
+
+Colors:    3 
+Positions: 5
+Runs:      1000
+
+Time: 1870
+
+Colors:    3 
+Positions: 6
+Runs:      1000
+
+Time: 2690
+
+Colors:    3 
+Positions: 7
+Runs:      1000
+
+Time: 4840
+
+Colors:    3 
+Positions: 8
+Runs:      1000
+
+Time: 9550
+
+Colors:    4 
+Positions: 1
+Runs:      1000
+
+Time: 1100
+
+Colors:    4 
+Positions: 2
+Runs:      1000
+
+Time: 1210
+
+Colors:    4 
+Positions: 3
+Runs:      1000
+
+Time: 1430
+
+Colors:    4 
+Positions: 4
+Runs:      1000
+
+Time: 1700
+
+Colors:    4 
+Positions: 5
+Runs:      1000
+
+Time: 2750
+
+Colors:    4 
+Positions: 6
+Runs:      1000
+
+Time: 5650
+
+Colors:    4 
+Positions: 7
+Runs:      1000
+
+Time: 13680
+
+Colors:    4 
+Positions: 8
+Runs:      1000
+
+Time: 35810
+
+Colors:    5 
+Positions: 1
+Runs:      1000
+
+Time: 1160
+
+Colors:    5 
+Positions: 2
+Runs:      1000
+
+Time: 1260
+
+Colors:    5 
+Positions: 3
+Runs:      1000
+
+Time: 1480
+
+Colors:    5 
+Positions: 4
+Runs:      1000
+
+Time: 2200
+
+Colors:    5 
+Positions: 5
+Runs:      1000
+
+Time: 4280
+
+Colors:    5 
+Positions: 6
+Runs:      1000
+
+Time: 11320
+
+Colors:    5 
+Positions: 7
+Runs:      1000
+
+Time: 33560
+
+Colors:    5 
+Positions: 8
+Runs:      1000
+
+Time: 104900
+
+Colors:    6 
+Positions: 1
+Runs:      1000
+
+Time: 1100
+
+Colors:    6 
+Positions: 2
+Runs:      1000
+
+Time: 1320
+
+Colors:    6 
+Positions: 3
+Runs:      1000
+
+Time: 1700
+
+Colors:    6 
+Positions: 4
+Runs:      1000
+
+Time: 2850
+
+Colors:    6 
+Positions: 5
+Runs:      1000
+
+Time: 6760
+
+Colors:    6 
+Positions: 6
+Runs:      1000
+
+Time: 22080
+
+Colors:    6 
+Positions: 7
+Runs:      1000
+
+Time: 75630
+
+Colors:    6 
+Positions: 8
+Runs:      1000
+
+Time: 257710
+
+Colors:    7 
+Positions: 1
+Runs:      1000
+
+Time: 1210
+
+Colors:    7 
+Positions: 2
+Runs:      1000
+
+Time: 1370
+
+Colors:    7 
+Positions: 3
+Runs:      1000
+Time: 1930
+
+Colors:    7 
+Positions: 4
+Runs:      1000
+
+Time: 3680
+
+Colors:    2 
+Positions: 9
+Runs:      1000
+
+Time: 8680
+Colors:    2 
+Positions: 10
+Runs:      1000
+
+Average: 5.497
+Std.Dev: 0.044158135614413584
+Maximum: 10
+Time: 9720
+Colors:    2 
+Positions: 11
+Runs:      1000
+
+Average: 5.873
+Std.Dev: 0.04350590492983411
+Maximum: 10
+Time: 16910
+Colors:    3 
+Positions: 9
+Runs:      1000
+
+Average: 5.127
+Std.Dev: 0.03165237546966851
+Maximum: 8
+Time: 32790
+Colors:    3 
+Positions: 10
+Runs:      1000
+
+Average: 5.508
+Std.Dev: 0.032756816222108784
+Maximum: 8
+Time: 90080
+-------------------
+everything below has 100 runs
+

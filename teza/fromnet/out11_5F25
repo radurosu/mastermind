@@ -1,0 +1,52 @@
+Colors:    2 
+Positions: 1
+Runs:      1000
+
+Average: 1.498
+Std.Dev: 0.01581917337430266
+Maximum: 2
+Time:1750
+Colors:    2 
+Positions: 2
+Runs:      1000
+
+Average: 1.98
+Std.Dev: 0.022362917969265553
+Maximum: 3
+Time:1320
+Colors:    2 
+Positions: 3
+Runs:      1000
+
+Average: 2.367
+Std.Dev: 0.025317028892663372
+Maximum: 4
+Time:1490
+Colors:    2 
+Positions: 4
+Runs:      1000
+
+Average: 2.85
+Std.Dev: 0.030006672597947284
+Maximum: 5
+Time:1480
+Colors:    2 
+Positions: 5
+Runs:      1000
+
+Average: 3.21
+Std.Dev: 0.03303015275458154
+Maximum: 6
+Time:1700
+Colors:    2 
+Positions: 6
+Runs:      1000
+
+Average: 3.688
+Std.Dev: 0.036248723701255606
+Maximum: 7
+Time:1980
+Colors:    2 
+Positions: 7
+Runs:      1000
+
