@@ -16,6 +16,8 @@
  *
  * Usage: ./mn <colors> <positions> <runs> [seed]
  *        ./mn sweep            (reproduce the 1997 table, 2-12 x 1-10)
+ * Env:   MN_THREADS=N  worker threads (default: hardware cores)
+ *        MN_LOG=1      per-game log lines
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,22 +25,25 @@
 #include <math.h>
 #include <time.h>
 #include <stdint.h>
+#include <pthread.h>
+#include <stdatomic.h>
+#include <unistd.h>
 
 #define MAXP 64
 #define MAXC 64
 #define MAXATT 512
 
-static uint64_t rng_state;
-static uint64_t xrand(void) {            /* xorshift64* */
-    uint64_t x = rng_state;
+static uint64_t xrand(uint64_t *s) {     /* xorshift64* */
+    uint64_t x = *s;
     x ^= x >> 12; x ^= x << 25; x ^= x >> 27;
-    rng_state = x;
+    *s = x;
     return x * 0x2545F4914F6CDD1DULL;
 }
-static int rnd(int min, int max) { return min + (int)(xrand() % (uint64_t)(max - min)); }
+static int rnd(uint64_t *s, int min, int max) { return min + (int)(xrand(s) % (uint64_t)(max - min)); }
 
 typedef struct {
     int positions, colors, attempt;
+    uint64_t rng;
     int value[MAXP][MAXC];               /* per-position color permutation */
     int counter[MAXP];                   /* odometer over permuted digits  */
     int guess[MAXATT][MAXP];
@@ -50,11 +55,11 @@ typedef struct {
 static void mm_init(MM *m, int pos, int col) {
     m->positions = pos; m->colors = col; m->attempt = 0;
     for (int i = 0; i < pos; i++) {
-        m->secret[i] = rnd(0, col);
+        m->secret[i] = rnd(&m->rng, 0, col);
         m->counter[i] = 0;
         for (int j = 0; j < col; j++) m->value[i][j] = j;
         for (int j = col - 1; j > 0; j--) {         /* Fisher-Yates */
-            int k = rnd(0, j + 1);
+            int k = rnd(&m->rng, 0, j + 1);
             int t = m->value[i][j]; m->value[i][j] = m->value[i][k]; m->value[i][k] = t;
         }
     }
@@ -121,8 +126,10 @@ static int mm_next(MM *m) {
     return 0;
 }
 
-static int play(int colors, int positions) {
+static int play(int colors, int positions, uint64_t seed) {
     MM m;
+    m.rng = seed;
+    xrand(&m.rng); xrand(&m.rng);
     mm_init(&m, positions, colors);
     for (;;) {
         if (mm_next(&m) < 0) { fprintf(stderr, "contradiction\n"); exit(1); }
@@ -137,52 +144,110 @@ static int play(int colors, int positions) {
     }
 }
 
-static void run(int colors, int positions, int runs) {
+/* ---- threaded runner: workers pull game indices from an atomic counter ---- */
+typedef struct {
+    int colors, positions, runs;
+    uint64_t seed;
+    int verbose;
+    _Atomic int next;                    /* next game index to claim  */
+    _Atomic int done;                    /* games completed           */
+    int *result;                         /* guess count per game      */
+    struct timespec t0;
+} Job;
+
+static void *worker(void *arg) {
+    Job *j = arg;
+    for (;;) {
+        int i = atomic_fetch_add(&j->next, 1);
+        if (i >= j->runs) return NULL;
+        int g = play(j->colors, j->positions, j->seed + (uint64_t)i * 0x9E3779B97F4A7C15ULL);
+        j->result[i] = g;
+        int d = atomic_fetch_add(&j->done, 1) + 1;
+        if (j->verbose) {
+            struct timespec tn; clock_gettime(CLOCK_MONOTONIC, &tn);
+            double el = (tn.tv_sec - j->t0.tv_sec) + (tn.tv_nsec - j->t0.tv_nsec) / 1e9;
+            fprintf(stderr, "[mn] game %d/%d: %d guesses  %.1fs elapsed\n", d, j->runs, g, el);
+        }
+    }
+}
+
+static void *reporter(void *arg) {
+    Job *j = arg;
+    int last = 0;
+    for (;;) {
+        sleep(5);
+        int d = atomic_load(&j->done);
+        if (d >= j->runs) return NULL;
+        if (d == last) continue;
+        last = d;
+        struct timespec tn; clock_gettime(CLOCK_MONOTONIC, &tn);
+        double el = (tn.tv_sec - j->t0.tv_sec) + (tn.tv_nsec - j->t0.tv_nsec) / 1e9;
+        double sum = 0; int max = 0;
+        for (int i = 0; i < j->runs; i++)
+            if (j->result[i]) { sum += j->result[i]; if (j->result[i] > max) max = j->result[i]; }
+        fprintf(stderr, "[mn] {%d,%d} %d/%d done  avg=%.3f max=%d  %.1fs elapsed  eta %.0fs\n",
+                j->colors, j->positions, d, j->runs, sum / d, max, el,
+                el / d * (j->runs - d));
+    }
+}
+
+static void run(int colors, int positions, int runs, uint64_t seed) {
+    int nthreads = 1;
+    const char *tenv = getenv("MN_THREADS");
+    if (tenv) nthreads = atoi(tenv);
+    else nthreads = (int)sysconf(_SC_NPROCESSORS_ONLN);
+    if (nthreads < 1) nthreads = 1;
+    if (nthreads > runs) nthreads = runs;
+
+    Job j = { .colors = colors, .positions = positions, .runs = runs,
+              .seed = seed, .verbose = getenv("MN_LOG") != NULL };
+    atomic_init(&j.next, 0);
+    atomic_init(&j.done, 0);
+    j.result = calloc(runs, sizeof(int));
+    clock_gettime(CLOCK_MONOTONIC, &j.t0);
+
+    fprintf(stderr, "[mn] start {%d,%d} space=%.3g runs=%d threads=%d\n",
+            colors, positions, pow(colors, positions), runs, nthreads);
+
+    pthread_t rep, th[256];
+    if (nthreads > 256) nthreads = 256;
+    pthread_create(&rep, NULL, reporter, &j);
+    for (int t = 0; t < nthreads; t++) pthread_create(&th[t], NULL, worker, &j);
+    for (int t = 0; t < nthreads; t++) pthread_join(th[t], NULL);
+
+    struct timespec t1; clock_gettime(CLOCK_MONOTONIC, &t1);
+    double ms = (t1.tv_sec - j.t0.tv_sec) * 1e3 + (t1.tv_nsec - j.t0.tv_nsec) / 1e6;
+
     double sum = 0, sumsq = 0;
-    int max = 0;
-    int hist[MAXATT] = {0};
-    int verbose = getenv("MN_LOG") != NULL;
-    int heartbeat = runs > 10 ? runs / 10 : 1;
-    struct timespec t0, t1, tn;
-    clock_gettime(CLOCK_MONOTONIC, &t0);
-    fprintf(stderr, "[mn] start {%d,%d} space=%.3g runs=%d\n",
-            colors, positions, pow(colors, positions), runs);
+    int max = 0, hist[MAXATT] = {0};
     for (int i = 0; i < runs; i++) {
-        int g = play(colors, positions);
+        int g = j.result[i];
         sum += g; sumsq += (double)g * g;
         if (g > max) max = g;
         hist[g < MAXATT ? g : MAXATT - 1]++;
-        clock_gettime(CLOCK_MONOTONIC, &tn);
-        double el = (tn.tv_sec - t0.tv_sec) + (tn.tv_nsec - t0.tv_nsec) / 1e9;
-        if (verbose)
-            fprintf(stderr, "[mn] game %d/%d: %d guesses  avg=%.3f  %.1fs elapsed\n",
-                    i + 1, runs, g, sum / (i + 1), el);
-        else if ((i + 1) % heartbeat == 0)
-            fprintf(stderr, "[mn] {%d,%d} %d/%d done  avg=%.3f max=%d  %.1fs elapsed  eta %.0fs\n",
-                    colors, positions, i + 1, runs, sum / (i + 1), max, el,
-                    el / (i + 1) * (runs - i - 1));
     }
-    clock_gettime(CLOCK_MONOTONIC, &t1);
     fprintf(stderr, "[mn] histogram:");
     for (int g = 1; g < MAXATT; g++) if (hist[g]) fprintf(stderr, " %d:%d", g, hist[g]);
     fprintf(stderr, "\n");
-    double ms = (t1.tv_sec - t0.tv_sec) * 1e3 + (t1.tv_nsec - t0.tv_nsec) / 1e6;
     double avg = sum / runs;
     double sd = sqrt((sumsq / runs - avg * avg) / runs);
-    printf("Colors: %-3d Positions: %-3d Runs: %-6d Average: %-7.3f Std.Dev: %-7.4f Maximum: %-3d Time: %.1f ms\n",
-           colors, positions, runs, avg, sd, max, ms);
+    printf("Colors: %-3d Positions: %-3d Runs: %-6d Average: %-7.3f Std.Dev: %-7.4f Maximum: %-3d Time: %.1f ms  (threads: %d)\n",
+           colors, positions, runs, avg, sd, max, ms, nthreads);
     fflush(stdout);
+    free(j.result);
+    pthread_cancel(rep);
+    pthread_join(rep, NULL);
 }
 
 int main(int argc, char **argv) {
-    rng_state = (argc > 4) ? strtoull(argv[4], 0, 10) : (uint64_t)time(0) * 0x9E3779B97F4A7C15ULL + 1;
+    uint64_t seed = (argc > 4) ? strtoull(argv[4], 0, 10) : (uint64_t)time(0) * 0x9E3779B97F4A7C15ULL + 1;
     if (argc > 1 && !strcmp(argv[1], "sweep")) {
         for (int c = 2; c <= 12; c++)
             for (int p = 1; p <= 10; p++)
-                run(c, p, 100);
+                run(c, p, 100, seed + c * 1000 + p);
         return 0;
     }
     if (argc < 4) { fprintf(stderr, "usage: %s <colors> <positions> <runs> [seed] | sweep\n", argv[0]); return 1; }
-    run(atoi(argv[1]), atoi(argv[2]), atoi(argv[3]));
+    run(atoi(argv[1]), atoi(argv[2]), atoi(argv[3]), seed);
     return 0;
 }
