@@ -4,7 +4,7 @@
 Thesis report, North Carolina State University, December 10, 1997. Chair: Dr. Donald
 L. Bitzer. Recovered from the Wayback Machine (original URL
 `www.csc.ncsu.edu/degrees/undergrad/Reports/rtrosu/`, first crawled January 23, 1998).
-Raw HTML pages and original Java source are in `original/`.
+Raw HTML pages and original Java source are in `/fableRetreivedFiles/`.
 
 Cited in later literature as `rosu99` (e.g. G. Ville, "An Optimal Mastermind (4,7)
 Strategy and More Results in the Expected Case," arXiv:1305.1010, and the
@@ -87,7 +87,7 @@ The largest published cell was {12,8} = 429,981,696 codes. New territory:
 Guess growth stays near-linear in colors and positions — the thesis curve
 extrapolates cleanly two orders of magnitude past where it was measured.
 
-## Files recovered (research/original/)
+## Files recovered (/fableRetreivedFiles/)
 
 - `index.html`, `intro.htm`, `definitions.htm`, `heuristic.htm`, `deep.htm`,
   `conclusion.htm`, `code.htm`, `technical.htm` — thesis chapters
