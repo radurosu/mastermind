@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MASTER MIND — The Rosu Heuristic (1997)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --felt:#1d3b2a;
+    --felt-dark:#12261b;
+    --wood:#5b3a24;
+    --board:#231913;
+    --board-hi:#3a2a1e;
+    --board-lo:#140d09;
+    --hole:#0c0805;
+    --brass:#c9a34e;
+    --brass-hi:#f0d78a;
+    --cream:#f2e8d5;
+    --ink:#181310;
+    --red:#c8102e;
+    --yellow:#ffcf33;
+    --green:#1f8a3b;
+    --blue:#1857c3;
+    --white:#f5f0e6;
+    --black:#1c1c1e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:var(--felt-dark);}
+  body{
+    min-height:100vh;
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--cream);
+    background:
+      radial-gradient(1200px 800px at 50% 10%, rgba(255,235,190,.10), transparent 60%),
+      repeating-linear-gradient(88deg, rgba(0,0,0,.06) 0 3px, transparent 3px 7px),
+      radial-gradient(ellipse at center, var(--felt) 0%, var(--felt-dark) 85%);
+    display:flex;flex-direction:column;align-items:center;
+    padding:28px 16px 60px;
+    overflow-x:hidden;
+  }
+  /* grain overlay */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- header ---------- */
+  header{text-align:center;margin-bottom:26px;animation:drop .7s cubic-bezier(.2,1.4,.4,1) both;}
+  @keyframes drop{from{transform:translateY(-30px);opacity:0}to{transform:none;opacity:1}}
+  h1{
+    font-family:'Alfa Slab One',serif;
+    font-size:clamp(2.4rem,7vw,4.6rem);
+    letter-spacing:.06em;line-height:.95;
+    color:var(--brass);
+    text-shadow:0 1px 0 #7a5a1e, 0 2px 0 #6a4d18, 0 3px 0 #5a4013, 0 6px 14px rgba(0,0,0,.6);
+  }
+  h1 span{color:var(--cream);}
+  .tagline{
+    margin-top:10px;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:#cdbfa3;
+  }
+  .tagline b{color:var(--brass-hi);font-weight:600;}
+
+  /* ---------- table layout ---------- */
+  .table{display:flex;gap:34px;align-items:flex-start;flex-wrap:wrap;justify-content:center;}
+
+  /* ---------- the board ---------- */
+  .board-wrap{position:relative;animation:rise .8s .15s cubic-bezier(.2,1.2,.4,1) both;}
+  @keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+  .board{
+    background:
+      linear-gradient(160deg, var(--board-hi), var(--board) 30%, var(--board-lo));
+    border-radius:26px;
+    padding:20px 22px 26px;
+    box-shadow:
+      inset 0 2px 3px rgba(255,220,160,.16),
+      inset 0 -3px 6px rgba(0,0,0,.7),
+      0 18px 40px rgba(0,0,0,.65),
+      0 4px 10px rgba(0,0,0,.5);
+    border:1px solid #0a0603;
+  }
+  /* wood-grain streaks on plastic */
+  .board::before{content:"";position:absolute;inset:0;border-radius:26px;pointer-events:none;
+    background:repeating-linear-gradient(115deg, transparent 0 14px, rgba(255,200,120,.02) 14px 16px);}
+
+  /* secret / shield row */
+  .secret-row{
+    display:flex;align-items:center;gap:14px;
+    padding:12px 14px;margin-bottom:16px;
+    background:linear-gradient(180deg,#171008,#0e0904);
+    border-radius:14px;
+    box-shadow:inset 0 3px 8px rgba(0,0,0,.9), inset 0 -1px 2px rgba(255,210,140,.08);
+    position:relative;
+  }
+  .secret-label{
+    font-size:.6rem;letter-spacing:.22em;color:var(--brass);text-transform:uppercase;
+    writing-mode:vertical-rl;transform:rotate(180deg);opacity:.9;
+  }
+  .shield{
+    position:absolute;left:44px;right:14px;top:6px;bottom:6px;
+    background:linear-gradient(170deg,#3a2a1c 0%, #2a1d12 60%, #1c1209);
+    border-radius:10px;z-index:5;
+    display:flex;align-items:center;justify-content:center;
+    font-size:.62rem;letter-spacing:.3em;color:#8a6d3d;text-transform:uppercase;
+    box-shadow:0 3px 6px rgba(0,0,0,.6), inset 0 1px 1px rgba(255,220,160,.15);
+    transition:transform .6s cubic-bezier(.6,-0.3,.3,1.4), opacity .5s;
+    cursor:default;user-select:none;
+  }
+  .shield.lifted{transform:translateY(-64px) rotateX(60deg);opacity:0;pointer-events:none;}
+
+  /* rows */
+  .rows{display:flex;flex-direction:column-reverse;gap:7px;}
+  .row{
+    display:flex;align-items:center;gap:14px;
+    padding:6px 10px;border-radius:12px;
+    transition:background .3s, box-shadow .3s;
+  }
+  .row .num{
+    width:20px;text-align:right;font-size:.62rem;color:#7d6a4d;user-select:none;
+  }
+  .row.active{
+    background:rgba(201,163,78,.07);
+    box-shadow:inset 0 0 0 1px rgba(201,163,78,.4), 0 0 18px rgba(201,163,78,.12);
+  }
+  .row.active .num{color:var(--brass-hi);}
+
+  .holes{display:flex;gap:12px;}
+  .hole{
+    width:44px;height:44px;border-radius:50%;
+    background:radial-gradient(circle at 38% 32%, #241a11 0%, var(--hole) 55%);
+    box-shadow:inset 0 4px 7px rgba(0,0,0,.95), inset 0 -1px 1px rgba(255,215,150,.12);
+    position:relative;cursor:default;
+    transition:box-shadow .2s;
+  }
+  .row.active .hole{cursor:pointer;}
+  .row.active .hole:hover{box-shadow:inset 0 4px 7px rgba(0,0,0,.95), inset 0 -1px 1px rgba(255,215,150,.12), 0 0 0 2px rgba(201,163,78,.55);}
+  .peg{
+    position:absolute;inset:4px;border-radius:50%;
+    box-shadow:0 3px 5px rgba(0,0,0,.55), inset 0 -4px 6px rgba(0,0,0,.35), inset 0 3px 4px rgba(255,255,255,.25);
+    animation:plunk .22s cubic-bezier(.3,1.6,.5,1) both;
+  }
+  @keyframes plunk{from{transform:scale(1.5);opacity:0}to{transform:scale(1);opacity:1}}
+  .peg::after{ /* gloss highlight */
+    content:"";position:absolute;left:22%;top:12%;width:32%;height:24%;
+    border-radius:50%;background:rgba(255,255,255,.65);filter:blur(1.5px);
+  }
+  .peg.c0{background:radial-gradient(circle at 35% 30%, #ff5a68, var(--red) 60%, #7d0a1d);}
+  .peg.c1{background:radial-gradient(circle at 35% 30%, #ffe89a, var(--yellow) 60%, #b8860b);}
+  .peg.c2{background:radial-gradient(circle at 35% 30%, #5fc07c, var(--green) 60%, #0c4a1e);}
+  .peg.c3{background:radial-gradient(circle at 35% 30%, #6f9ae8, var(--blue) 60%, #0a2a6b);}
+  .peg.c4{background:radial-gradient(circle at 35% 30%, #ffffff, var(--white) 60%, #b9b0a0);}
+  .peg.c5{background:radial-gradient(circle at 35% 30%, #5a5a60, var(--black) 60%, #000);}
+
+  /* feedback quad */
+  .keys{
+    display:grid;grid-template-columns:repeat(2,16px);grid-template-rows:repeat(2,16px);
+    gap:5px;padding:7px;border-radius:8px;
+    background:rgba(0,0,0,.35);
+    box-shadow:inset 0 2px 4px rgba(0,0,0,.8), inset 0 -1px 1px rgba(255,215,150,.07);
+  }
+  .khole{
+    width:16px;height:16px;border-radius:50%;
+    background:radial-gradient(circle at 38% 32%, #221a12, #0b0703 60%);
+    box-shadow:inset 0 2px 3px rgba(0,0,0,.9);
+    position:relative;
+  }
+  .kpeg{position:absolute;inset:2px;border-radius:50%;animation:plunk .2s both;}
+  .kpeg.black{background:radial-gradient(circle at 35% 30%, #4d4d52, #111 65%);box-shadow:0 1px 2px rgba(0,0,0,.7), inset 0 1px 1px rgba(255,255,255,.3);}
+  .kpeg.white{background:radial-gradient(circle at 35% 30%, #fff, #d9d2c2 65%);box-shadow:0 1px 2px rgba(0,0,0,.7);}
+
+  /* ---------- side console ---------- */
+  aside{
+    width:300px;display:flex;flex-direction:column;gap:18px;
+    animation:rise .8s .3s cubic-bezier(.2,1.2,.4,1) both;
+  }
+  .panel{
+    background:linear-gradient(165deg,#2e2013,#1e130a 70%);
+    border:1px solid rgba(201,163,78,.35);
+    border-radius:16px;padding:16px 18px;
+    box-shadow:0 10px 26px rgba(0,0,0,.5), inset 0 1px 1px rgba(255,220,160,.12);
+  }
+  .panel h2{
+    font-family:'Alfa Slab One',serif;font-size:.85rem;letter-spacing:.14em;
+    color:var(--brass);text-transform:uppercase;margin-bottom:12px;
+  }
+
+  /* peg tray */
+  .tray{display:flex;gap:10px;justify-content:space-between;}
+  .tray .pick{
+    width:38px;height:38px;border-radius:50%;cursor:pointer;position:relative;border:none;
+    box-shadow:0 4px 7px rgba(0,0,0,.55), inset 0 -4px 6px rgba(0,0,0,.35), inset 0 3px 4px rgba(255,255,255,.25);
+    transition:transform .15s cubic-bezier(.3,1.6,.5,1), box-shadow .15s;
+  }
+  .tray .pick::after{content:"";position:absolute;left:22%;top:12%;width:32%;height:24%;border-radius:50%;background:rgba(255,255,255,.65);filter:blur(1.5px);}
+  .tray .pick:hover{transform:translateY(-4px) scale(1.08);}
+  .tray .pick.sel{transform:translateY(-6px) scale(1.12);box-shadow:0 8px 12px rgba(0,0,0,.6), 0 0 0 3px var(--brass), inset 0 3px 4px rgba(255,255,255,.25);}
+  .pick.c0{background:radial-gradient(circle at 35% 30%, #ff5a68, var(--red) 60%, #7d0a1d);}
+  .pick.c1{background:radial-gradient(circle at 35% 30%, #ffe89a, var(--yellow) 60%, #b8860b);}
+  .pick.c2{background:radial-gradient(circle at 35% 30%, #5fc07c, var(--green) 60%, #0c4a1e);}
+  .pick.c3{background:radial-gradient(circle at 35% 30%, #6f9ae8, var(--blue) 60%, #0a2a6b);}
+  .pick.c4{background:radial-gradient(circle at 35% 30%, #ffffff, var(--white) 60%, #b9b0a0);}
+  .pick.c5{background:radial-gradient(circle at 35% 30%, #5a5a60, var(--black) 60%, #000);}
+
+  /* buttons */
+  .btn{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.78rem;letter-spacing:.12em;
+    text-transform:uppercase;cursor:pointer;width:100%;
+    padding:11px 0;border-radius:10px;border:1px solid #8a6d2e;
+    background:linear-gradient(180deg,#e3bd66,#b98f36 60%,#96712a);
+    color:#241a08;
+    box-shadow:0 4px 8px rgba(0,0,0,.5), inset 0 1px 1px rgba(255,255,255,.5);
+    transition:transform .12s, filter .12s;
+    margin-top:10px;
+  }
+  .btn:hover{filter:brightness(1.08);}
+  .btn:active{transform:translateY(2px);box-shadow:0 1px 3px rgba(0,0,0,.5);}
+  .btn:disabled{filter:grayscale(.7) brightness(.7);cursor:not-allowed;transform:none;}
+  .btn.ghost{
+    background:transparent;color:var(--brass);border:1px solid rgba(201,163,78,.5);
+    box-shadow:none;
+  }
+  .btn.ghost:hover{background:rgba(201,163,78,.1);}
+
+  /* mode switch */
+  .modes{display:flex;border:1px solid rgba(201,163,78,.4);border-radius:10px;overflow:hidden;}
+  .modes button{
+    flex:1;padding:10px 4px;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.08em;
+    text-transform:uppercase;background:transparent;color:#a08c66;border:none;cursor:pointer;
+    transition:background .2s,color .2s;
+  }
+  .modes button.on{background:var(--brass);color:#241a08;font-weight:600;}
+
+  .msg{
+    min-height:58px;font-size:.74rem;line-height:1.5;color:#e8dcc2;
+    border-left:3px solid var(--brass);padding-left:10px;
+  }
+  .msg .win{color:var(--brass-hi);font-weight:600;}
+  .stat{display:flex;justify-content:space-between;font-size:.7rem;color:#a08c66;margin-top:8px;}
+  .stat b{color:var(--cream);}
+
+  /* thesis footnote */
+  .thesis{max-width:760px;margin-top:44px;font-size:.72rem;line-height:1.75;color:#b3a888;text-align:center;
+    animation:drop .8s .5s both;}
+  .thesis a{color:var(--brass-hi);}
+  .thesis .cite{display:block;margin-top:8px;font-style:italic;color:#8f8266;}
+
+  @media (max-width:820px){
+    aside{width:100%;max-width:420px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>MASTER<span> </span>MIND</h1>
+  <p class="tagline">The <b>Rosu Heuristic</b> · NCSU Honors Thesis · December 10, 1997</p>
+</header>
+
+<div class="table">
+
+  <!-- BOARD -->
+  <div class="board-wrap">
+    <div class="board">
+      <div class="secret-row">
+        <span class="secret-label">Code</span>
+        <div class="holes" id="secretHoles"></div>
+        <div class="shield" id="shield">Master Mind</div>
+      </div>
+      <div class="rows" id="rows"></div>
+    </div>
+  </div>
+
+  <!-- CONSOLE -->
+  <aside>
+    <div class="panel">
+      <h2>Mode</h2>
+      <div class="modes">
+        <button id="modeHuman" class="on">You break<br>the code</button>
+        <button id="modeRosu">Rosu '97<br>breaks yours</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Peg Tray</h2>
+      <div class="tray" id="tray"></div>
+      <button class="btn" id="submitBtn" disabled>Place Guess</button>
+      <button class="btn ghost" id="hintBtn">Hint · Rosu Heuristic</button>
+      <button class="btn ghost" id="newBtn">New Game</button>
+    </div>
+
+    <div class="panel">
+      <h2>Console</h2>
+      <p class="msg" id="msg"></p>
+      <div class="stat"><span>Guesses</span><b id="statG">0 / 10</b></div>
+      <div class="stat"><span>Codes still consistent</span><b id="statC">1296</b></div>
+      <div class="stat"><span>Thesis avg for {6,4}</span><b>4.64</b></div>
+    </div>
+  </aside>
+</div>
+
+<p class="thesis">
+  Solver is a faithful <em>one shot prompt</em> Fable-generated JavaScript port of
+  <code>mmSolver.java</code> (1997), done on 7/9/2026: shuffle the full
+  code set once, then each turn submit the first code in the shuffled order that is consistent
+  with every previous (guess, result) pair. The thesis measured an average of 4.64 guesses and a
+  worst case of 8 for the classic {6&nbsp;colors, 4&nbsp;positions} game, and showed near-linear
+  growth of expected guesses across code spaces from {2,1} to {12,8}.
+  <span class="cite">Radu T. Rosu, “Analysis of the game of Mastermind — the m<sup>n</sup> case,”
+  Undergraduate Honors Thesis, North Carolina State University, Dr.&nbsp;Donald&nbsp;L.&nbsp;Bitzer (chair), Dec&nbsp;10&nbsp;1997.</span>
+</p>
+
+<script>
+/* ================= Rosu 1997 heuristic — port of mmSolver.java ================= */
+const COLORS = 6, POSITIONS = 4, MAXG = 10;
+const TOTAL = Math.pow(COLORS, POSITIONS);
+
+/* compareCodes(): counts blacks, then color matches, whites = matches - blacks */
+function grade(a, b){
+  let blacks = 0, whites = 0;
+  const tmp = b.slice();
+  for(let i = 0; i < POSITIONS; i++) if(a[i] === b[i]) blacks++;
+  for(let i = 0; i < POSITIONS; i++){
+    const j = tmp.indexOf(a[i]);
+    if(j !== -1){ whites++; tmp[j] = -1; }
+  }
+  return { blacks, whites: whites - blacks };
+}
+
+function intToCode(n){
+  const c = new Array(POSITIONS);
+  for(let j = POSITIONS - 1; j >= 0; j--){ c[j] = n % COLORS; n = Math.floor(n / COLORS); }
+  return c;
+}
+
+/* mmSolver: randomizeCodeList() + verifyGuess()/setGuess() loop */
+class RosuSolver{
+  constructor(){
+    this.codeList = Array.from({length: TOTAL}, (_, i) => i);
+    for(let next = 0; next < TOTAL - 1; next++){
+      const idx = next + Math.floor(Math.random() * (TOTAL - next));
+      [this.codeList[next], this.codeList[idx]] = [this.codeList[idx], this.codeList[next]];
+    }
+    this.guessIndex = 0;
+    this.history = [];
+  }
+  consistent(code){
+    return this.history.every(h => {
+      const r = grade(h.guess, code);
+      return r.blacks === h.blacks && r.whites === h.whites;
+    });
+  }
+  nextGuess(){
+    while(this.guessIndex < TOTAL){
+      const code = intToCode(this.codeList[this.guessIndex++]);
+      if(this.consistent(code)) return code;
+    }
+    return null;
+  }
+  record(guess, res){ this.history.push({ guess, blacks: res.blacks, whites: res.whites }); }
+}
+
+function countConsistent(history){
+  let n = 0;
+  for(let i = 0; i < TOTAL; i++){
+    const code = intToCode(i);
+    if(history.every(h => { const r = grade(h.guess, code); return r.blacks === h.blacks && r.whites === h.whites; })) n++;
+  }
+  return n;
+}
+
+/* ================= game state & board ================= */
+const rowsEl = document.getElementById('rows');
+const secretHolesEl = document.getElementById('secretHoles');
+const shieldEl = document.getElementById('shield');
+const trayEl = document.getElementById('tray');
+const msgEl = document.getElementById('msg');
+const submitBtn = document.getElementById('submitBtn');
+const hintBtn = document.getElementById('hintBtn');
+const newBtn = document.getElementById('newBtn');
+const statG = document.getElementById('statG');
+const statC = document.getElementById('statC');
+
+let mode = 'human';            // 'human' | 'rosu'
+let secret = [];               // color indices
+let currentRow = 0;
+let currentGuess = [null, null, null, null];
+let selectedColor = 0;
+let history = [];
+let over = false;
+let solverTimer = null;
+let settingSecret = false;     // rosu mode: user placing secret
+
+function buildBoard(){
+  rowsEl.innerHTML = '';
+  for(let r = 0; r < MAXG; r++){
+    const row = document.createElement('div');
+    row.className = 'row'; row.dataset.row = r;
+    row.innerHTML = `<span class="num">${r + 1}</span>`;
+    const holes = document.createElement('div'); holes.className = 'holes';
+    for(let p = 0; p < POSITIONS; p++){
+      const h = document.createElement('div');
+      h.className = 'hole'; h.dataset.pos = p;
+      h.addEventListener('click', () => onHole(r, p));
+      holes.appendChild(h);
+    }
+    const keys = document.createElement('div'); keys.className = 'keys';
+    for(let k = 0; k < 4; k++){ const kh = document.createElement('div'); kh.className = 'khole'; keys.appendChild(kh); }
+    row.appendChild(holes); row.appendChild(keys);
+    rowsEl.appendChild(row);
+  }
+  secretHolesEl.innerHTML = '';
+  for(let p = 0; p < POSITIONS; p++){
+    const h = document.createElement('div');
+    h.className = 'hole'; h.dataset.pos = p;
+    h.addEventListener('click', () => onSecretHole(p));
+    secretHolesEl.appendChild(h);
+  }
+}
+
+function buildTray(){
+  trayEl.innerHTML = '';
+  for(let c = 0; c < COLORS; c++){
+    const b = document.createElement('button');
+    b.className = 'pick c' + c + (c === selectedColor ? ' sel' : '');
+    b.addEventListener('click', () => {
+      selectedColor = c;
+      trayEl.querySelectorAll('.pick').forEach((el, i) => el.classList.toggle('sel', i === c));
+    });
+    trayEl.appendChild(b);
+  }
+}
+
+function setPeg(holeEl, color){
+  holeEl.innerHTML = '';
+  if(color !== null && color !== undefined){
+    const p = document.createElement('div');
+    p.className = 'peg c' + color;
+    holeEl.appendChild(p);
+  }
+}
+
+function setKeys(rowIdx, res){
+  const keys = rowsEl.children[rowIdx].querySelectorAll('.khole');
+  let i = 0;
+  for(let b = 0; b < res.blacks; b++, i++) keys[i].innerHTML = '<div class="kpeg black"></div>';
+  for(let w = 0; w < res.whites; w++, i++) keys[i].innerHTML = '<div class="kpeg white"></div>';
+}
+
+function highlightRow(){
+  rowsEl.querySelectorAll('.row').forEach((el, i) => el.classList.toggle('active', !over && mode === 'human' && i === currentRow));
+}
+
+function say(html){ msgEl.innerHTML = html; }
+function stats(){
+  statG.textContent = `${history.length} / ${MAXG}`;
+  statC.textContent = history.length ? countConsistent(history) : TOTAL;
+}
+
+/* ---------- human mode interactions ---------- */
+function onHole(r, p){
+  if(over || mode !== 'human' || r !== currentRow) return;
+  currentGuess[p] = selectedColor;
+  setPeg(rowsEl.children[r].querySelectorAll('.hole')[p], selectedColor);
+  submitBtn.disabled = currentGuess.some(v => v === null);
+}
+
+function onSecretHole(p){
+  if(!settingSecret) return;
+  secret[p] = selectedColor;
+  setPeg(secretHolesEl.children[p], selectedColor);
+  if(secret.filter(v => v !== null && v !== undefined).length === POSITIONS && secret.length === POSITIONS){
+    submitBtn.disabled = false;
+  }
+}
+
+function submitGuess(){
+  if(mode === 'rosu'){ startRosuRun(); return; }
+  if(currentGuess.some(v => v === null)) return;
+  const res = grade(currentGuess, secret);
+  history.push({ guess: currentGuess.slice(), blacks: res.blacks, whites: res.whites });
+  setKeys(currentRow, res);
+  stats();
+  if(res.blacks === POSITIONS){
+    endGame(`<span class="win">CODE BROKEN in ${history.length} — thesis average is 4.64. ${history.length <= 4 ? 'You beat the 1997 heuristic.' : history.length <= 5 ? 'Dead even with the machine.' : 'The heuristic would have had you.'}</span>`);
+    return;
+  }
+  currentRow++;
+  currentGuess = [null, null, null, null];
+  submitBtn.disabled = true;
+  if(currentRow >= MAXG){
+    endGame(`Board full. The code stays unbroken — even the 1997 worst case was 8.`);
+    return;
+  }
+  say(`Row ${currentRow} graded: <b>${res.blacks}</b> black, <b>${res.whites}</b> white. ${countConsistent(history)} codes remain consistent.`);
+  highlightRow();
+}
+
+function hint(){
+  if(over || mode !== 'human') return;
+  const s = new RosuSolver();
+  history.forEach(h => s.record(h.guess, h));
+  const g = s.nextGuess();
+  if(!g){ say('No consistent code exists — a grading contradiction.'); return; }
+  currentGuess = g.slice();
+  const holes = rowsEl.children[currentRow].querySelectorAll('.hole');
+  g.forEach((c, p) => setPeg(holes[p], c));
+  submitBtn.disabled = false;
+  say(`Rosu heuristic suggests this row: first shuffled code consistent with all ${history.length} previous results.`);
+}
+
+/* ---------- rosu solver mode ---------- */
+function startRosuRun(){
+  if(secret.length !== POSITIONS || secret.some(v => v === null || v === undefined)){
+    say('Place all four secret pegs first.'); return;
+  }
+  settingSecret = false;
+  shieldEl.classList.remove('lifted');
+  submitBtn.disabled = true;
+  hintBtn.disabled = true;
+  const solver = new RosuSolver();
+  say('Running <b>mmSolver</b>… shuffled ' + TOTAL + ' codes, scanning for consistency.');
+  const step = () => {
+    const g = solver.nextGuess();
+    if(!g){ endGame('Contradiction — no consistent code.'); return; }
+    const res = grade(g, secret);
+    solver.record(g, res);
+    history.push({ guess: g.slice(), blacks: res.blacks, whites: res.whites });
+    const holes = rowsEl.children[currentRow].querySelectorAll('.hole');
+    g.forEach((c, p) => setPeg(holes[p], c));
+    setKeys(currentRow, res);
+    stats();
+    if(res.blacks === POSITIONS){
+      endGame(`<span class="win">Machine broke your code in ${history.length} guess${history.length > 1 ? 'es' : ''}.</span> 1997 average: 4.64 · worst case: 8.`);
+      return;
+    }
+    currentRow++;
+    if(currentRow >= MAXG){ endGame('The heuristic ran out of board — statistically remarkable (worst case measured was 8).'); return; }
+    say(`Guess ${history.length}: <b>${res.blacks}</b>B <b>${res.whites}</b>W — ${countConsistent(history)} codes remain.`);
+    solverTimer = setTimeout(step, 950);
+  };
+  solverTimer = setTimeout(step, 500);
+}
+
+function endGame(message){
+  over = true;
+  shieldEl.classList.add('lifted');
+  secret.forEach((c, p) => setPeg(secretHolesEl.children[p], c));
+  say(message);
+  submitBtn.disabled = true;
+  highlightRow();
+}
+
+/* ---------- game setup ---------- */
+function newGame(){
+  clearTimeout(solverTimer);
+  over = false;
+  history = [];
+  currentRow = 0;
+  currentGuess = [null, null, null, null];
+  buildBoard();
+  stats();
+  hintBtn.disabled = mode === 'rosu';
+  shieldEl.classList.remove('lifted');
+  if(mode === 'human'){
+    settingSecret = false;
+    secret = intToCode(Math.floor(Math.random() * TOTAL));
+    submitBtn.textContent = 'Place Guess';
+    submitBtn.disabled = true;
+    say('A secret code is set behind the shield. Pick a color, click the holes in the lit row, then place your guess.');
+  } else {
+    settingSecret = true;
+    secret = [null, null, null, null];
+    shieldEl.classList.add('lifted');
+    submitBtn.textContent = 'Run Rosu Solver';
+    submitBtn.disabled = true;
+    say('You are the codemaker. Place four secret pegs in the top row, then release the 1997 heuristic.');
+  }
+  highlightRow();
+}
+
+document.getElementById('modeHuman').addEventListener('click', () => switchMode('human'));
+document.getElementById('modeRosu').addEventListener('click', () => switchMode('rosu'));
+function switchMode(m){
+  mode = m;
+  document.getElementById('modeHuman').classList.toggle('on', m === 'human');
+  document.getElementById('modeRosu').classList.toggle('on', m === 'rosu');
+  newGame();
+}
+
+submitBtn.addEventListener('click', submitGuess);
+hintBtn.addEventListener('click', hint);
+newBtn.addEventListener('click', newGame);
+
+buildTray();
+newGame();
+</script>
+</body>
+</html>
