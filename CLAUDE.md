@@ -23,6 +23,11 @@ Blog post about the build: https://blog.eloquentix.com/one-prompt-mastermind-and
 **2026 material:**
 - `index.html` — playable game page, classic Invicta board. Two modes (you break /
   Rosu-'97-heuristic breaks yours), hint button. Faithful JS port of `mmSolver.java`.
+  Installable offline PWA: `sw.js` (stale-while-revalidate, so index.html updates
+  propagate on the next online load — no cache-version bump needed) +
+  `manifest.webmanifest` + `fonts/` (self-hosted woff2; no Google Fonts at runtime)
+  + `icons/`. Mobile: peg tray pins to the bottom of the viewport ≤820px.
+  Local stats ledger in `localStorage` (key `mm-ledger-v1`), device-only.
 - `1997/` — browsable replica of the original thesis site, assembled from `teza/DOCS/`
   with minimal link repairs (offline-save path mangling, `conclusions/conlusion`
   typo aliases). `1997/applet/` = original applet, defunct, note added.
