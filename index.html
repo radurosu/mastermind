@@ -299,7 +299,10 @@
       --hs:min(calc((100vw - 94px) / 4.6), 64px);
     }
     html,body{height:100dvh;overflow:hidden;}
-    body{padding:0;align-items:stretch;overscroll-behavior:none;}
+    /* min-height:100vh from desktop would win over height:100dvh — on iOS
+       Safari 100vh includes the space behind the collapsed toolbar, which
+       shoved the dock off-screen */
+    body{min-height:0;padding:0;align-items:stretch;overscroll-behavior:none;}
     /* slim, single-line brand bar */
     header{margin:0;padding:10px 12px 8px;animation:none;}
     h1{font-size:1.35rem;letter-spacing:.08em;}
