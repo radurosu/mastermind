@@ -309,7 +309,7 @@
     .tagline{display:none;}
     .thesis{display:none;}
     /* app frame: header / board (fills, scrolls inside) / dock, all in flow */
-    .table{flex:1 1 auto;min-height:0;width:100%;display:flex;flex-direction:column;flex-wrap:nowrap;gap:0;}
+    .table{flex:1 1 auto;min-height:0;width:100%;display:flex;flex-direction:column;flex-wrap:nowrap;gap:0;align-items:stretch;}
     /* aside's panels live in the dock and the drawer; flatten it away */
     aside{display:contents;}
     .board-wrap{animation:none;flex:1 1 auto;min-height:0;width:100%;display:flex;}
@@ -345,6 +345,7 @@
       border-left:3px solid var(--brass);padding-left:8px;
     }
     .toast .win{color:var(--brass-hi);font-weight:600;}
+    .toast:empty{display:none;}
     .tray{max-width:340px;margin:0 auto;}
     .btns{flex-direction:row;gap:8px;max-width:420px;margin:0 auto;}
     .btns .btn{margin-top:10px;padding:13px 0;font-size:.68rem;letter-spacing:.06em;}
@@ -815,7 +816,7 @@ function newGame(){
     secret = intToCode(Math.floor(Math.random() * TOTAL));
     submitBtn.textContent = 'Place Guess';
     submitBtn.disabled = true;
-    say('A secret code is set behind the shield. Pick a color, click the holes in the lit row, then place your guess.');
+    say('');
   } else {
     settingSecret = true;
     secret = [null, null, null, null];
