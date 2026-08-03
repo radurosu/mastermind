@@ -58,6 +58,7 @@
     min-height:100vh;
     font-family:'IBM Plex Mono',monospace;
     color:var(--cream);
+    -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
     background:
       radial-gradient(1200px 800px at 50% 10%, rgba(255,235,190,.10), transparent 60%),
       repeating-linear-gradient(88deg, rgba(0,0,0,.06) 0 3px, transparent 3px 7px),
@@ -318,6 +319,7 @@
   /* thesis footnote */
   .thesis{max-width:760px;margin-top:44px;font-size:.72rem;line-height:1.75;color:#b3a888;text-align:center;
     animation:drop .8s .5s both;}
+  .thesis{-webkit-user-select:text;user-select:text;}
   .thesis a{color:var(--brass-hi);}
   .thesis .cite{display:block;margin-top:8px;font-style:italic;color:#8f8266;}
 
@@ -685,6 +687,8 @@ document.body.appendChild(colorPop);
 let popApply = null;
 
 function openColorPop(holeEl, apply){
+  const sel = window.getSelection && window.getSelection();
+  if(sel) sel.removeAllRanges();
   popApply = apply;
   colorPop.classList.add('open');
   const r = holeEl.getBoundingClientRect();
