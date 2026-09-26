@@ -405,6 +405,9 @@
   }
   @keyframes trayup{from{transform:translateY(110%)}to{transform:none}}
 </style>
+<!-- Cookieless visit counter (goatcounter.com). No personal data; offline play just skips it. -->
+<script data-goatcounter="https://mastermindgame.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -564,6 +567,12 @@ function loadLedger(){
 function saveLedger(){ try{ localStorage.setItem(LEDGER_KEY, JSON.stringify(ledger)); }catch(e){} }
 let ledger = loadLedger();
 
+/* Finished games → GoatCounter events, tagged with the link's ?s= so a shared
+   link (e.g. ?s=school) shows up as its own line. No-op if blocked/offline. */
+function countEvent(name){
+  try{ window.goatcounter.count({ path: name + location.search, event: true }); }catch(e){}
+}
+
 function recordHumanGame(won, guesses){
   const h = ledger.human;
   h.played++;
@@ -578,12 +587,14 @@ function recordHumanGame(won, guesses){
   }
   saveLedger();
   renderLedger();
+  countEvent(won ? 'game-won' : 'game-lost');
 }
 function recordRosuRun(guesses){
   ledger.rosu.runs++;
   ledger.rosu.totalGuesses += guesses;
   saveLedger();
   renderLedger();
+  countEvent('rosu-run');
 }
 
 function renderLedger(){
